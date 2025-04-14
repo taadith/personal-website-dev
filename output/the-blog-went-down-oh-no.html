@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>aadith thiruvallarai - the blog went down... oh no!</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda"/>
+        <link rel="stylesheet" type="text/css" href="/theme/css/main.css"/>
+
+<meta name="tags" content="meta" />
+</head>
+<body>
+<style>.github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out
+}
+@keyframes octocat-wave {
+    0%, 100% {
+        transform: rotate(0)
+    }
+    20%, 60% {
+        transform: rotate(-25deg)
+    }
+    40%, 80% {
+        transform: rotate(10deg)
+    }
+}
+@media (max-width: 500px) {
+    .github-corner:hover .octo-arm {
+        animation: none
+    }
+
+    .github-corner .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+    }
+}</style><div id="container">
+    <header>
+        <h1><a href="/">aadith thiruvallarai</a></h1>
+            <ul class="social-media">
+                    <li><a href="https://github.com/taadith"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/aadith-thiruvallarai/"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+            </ul>
+        <p><em></em></p>
+    </header>
+    <nav>
+        <ul>
+                    <li><a  class="active" href="/category/sisyphean-didactic-auto-flagellator.html">sisyphean didactic auto-flagellator</a></li>
+                    <li><a href="/pages/about.html">about</a></li>
+                    <li><a href="/pages/projects.html">projects</a></li>
+        </ul>
+    </nav>
+<main>
+    <article>
+        <h1>the blog went down... oh no!</h1>
+        
+        <aside>
+            <ul>
+                <li>
+                    <time datetime="2025-04-08 00:00:00-05:00">Apr 08, 2025</time>
+                </li>
+                <li>
+                    <time datetime="2025-04-14 00:00:00-05:00">Modified
+                        on Apr 14, 2025</time>
+                </li>
+                <li>6 min read</li>
+                <li>
+                    Categories:
+                    <a href="/category/sisyphean-didactic-auto-flagellator.html"><em>sisyphean didactic auto-flagellator</em></a>
+                </li>
+                <li>
+                    Tags:
+                    <a href="/tag/meta.html"><em>#meta</em></a>
+                </li>
+            </ul>
+        </aside>
+        <p>If you're my weekly 1-3 visitors<sup id="fnref:weekly users"><a class="footnote-ref" href="#fn:weekly users">1</a></sup>, you may have noticed the website went down… 
+It seems that when you host a website using 
+<strong><em><a href="https://en.wikipedia.org/wiki/Dynamic_DNS" target="_blank">DDNS</a></em></strong> (dynamic <strong><em><a href="https://en.wikipedia.org/wiki/Domain_Name_System" target="”_blank”">DNS</a></em></strong>) on your home WiFi, your ISP (internet service provider) may not be a huge fan.</p>
+<blockquote>
+<p>Accessing a website is tantamount to accessing files hosted by or on a computer, often called a server, through the Internet.
+The way our computer, often called the client, can talk to the server is through the use of an IP (Internet Protocol) address, the Internet version of a mailing address.
+It would be a pain if you had to remember the IP address for every website you want to use on a daily basis.
+Thankfully, we don’t have to memorize every website’s IP address because of DNS (domain name system).
+DNS allows you to use a human-friendly domain name, or URL, instead of the computer's IP address.
+Then, DNS servers will help find the IP address related to the website you’re seeking and provide it to your computer.</p>
+</blockquote>
+<p>Previously, when I had my website’s related files on my <strong><em><a href="https://en.wikipedia.org/wiki/Raspberry_Pi" target="”_blank”">Raspberry Pi</a></em></strong>, I used DDNS with the help of a company <strong><em><a href="https://en.wikipedia.org/wiki/No-IP" target="”_blank”">No-IP</a></em></strong>​​.
+No-IP’s DDNS application would run every 5-10 minutes on my Raspberry Pi telling No-IP’s servers if my external IP address had changed.
+If it did change, they would make sure to publish new DNS records saying what IP address my website should point towards.</p>
+<blockquote>
+<p>Every computer in a home network talks to the internet using the home router. 
+The home router has an external, or public-facing, IP address used to access websites. 
+This IP address can be changed by an ISP without warning. 
+In order to utilize DNS, it’s important to know what your IP address is at all times and rely on the fact that it will not change over time. 
+This is where DDNS comes into play.</p>
+</blockquote>
+<p>I noticed that the WiFi would intermittently go down on a daily basis – of course there couldn’t possibly be a reason for this…</p>
+<p>My best conclusion is that my ISP didn't like No-IP’s application having periodic traffic to confirm my home router's external IP address. Otherwise, it could have been a malicious actor or a bot was actually scanning my network/ports, or some other unforeseeable reason.</p>
+<h2>choosing the tech stack</h2>
+<blockquote>
+<p>A tech stack is a list of all the technology services used to run a single application or website.</p>
+</blockquote>
+<p>What I was using before I had to shutdown the website:</p>
+<ol>
+<li>“On-premise” hardware: Raspberry Pi</li>
+<li>Operating System: <strong><em><a href="https://en.wikipedia.org/wiki/Raspberry_Pi_OS" target="”_blank”">Raspberry Pi OS</a></em></strong>, based off of <strong><em><a href="https://en.wikipedia.org/wiki/Debian" target="”_blank”">Debian</a></em></strong> (a <strong><em><a href="https://en.wikipedia.org/wiki/Linux" target="”_blank”">Linux</a></em></strong> distribution)</li>
+<li>Web Server: <strong><em><a href="https://nginx.org/en/" target="”_blank”">nginx</a></em></strong></li>
+<li>Content Type: some good ol’ HTML and CSS<sup id="fnref2:basic website"><a class="footnote-ref" href="#fn:basic website">2</a></sup></li>
+</ol>
+<h3>to <strong><em><a href="https://en.wikipedia.org/wiki/Cloud_computing" target="”_blank”">cloud</a></em></strong> or to self-host, that is the question</h3>
+<p>After much deliberation and moral indignation at the choices that led me here, I unwillingly chose to switch to using the cloud<sup id="fnref:cloud meme"><a class="footnote-ref" href="#fn:cloud meme">3</a></sup>. 
+Instead of being cool and hosting a website on a goddamn Raspberry Pi, I'm now hosting the website in <strong><em><a href="https://en.wikipedia.org/wiki/Google_Cloud_Platform" target="”_blank”">GCP</a></em></strong> (the Google Cloud Platform). 
+I was really proud of myself for getting hardware I could touch and feel to host a website readily accessible from the Internet. 
+But, in order to mitigate the ISP issues from occurring, I had no choice but to host the website remotely. 
+It’s not like I have another network laying around so the next best thing is to use the cloud. </p>
+<h3>the software’s hardware</h3>
+<p>I left a lot of the hardware set up details out in my previous blog post simply because I felt like it would be a blog post of its own. 
+Setting up the Raspberry Pi, to put it succinctly, involved putting some of the hardware together, downloading the appropriate 
+<strong><em><a href="https://en.wikipedia.org/wiki/System_image" target="_blank">image</a></em></strong>, and then 
+<strong><em><a href="https://en.wikipedia.org/wiki/Hardening_(computing)" target="”_blank”">hardening</a></em></strong> the OS, operating system. 
+I must admit, creating <strong><em><a href="https://en.wikipedia.org/wiki/Virtual_machine" target="”_blank”">VMs</a></em></strong>, (virtual machines) in the cloud is much easier.</p>
+<blockquote>
+<p>A VM is a software-defined computer existing only in code. 
+Most likely the machine, or computer, that you and I are using everyday is physically, or hardware-, defined.
+A VM, much like a hardware-defined machine, has a CPU, RAM, storage, and can even connect to the internet.</p>
+</blockquote>
+<p>In the GCP console, I created a project to hold all of my resources related to running this website, attached a billing account (gave my credit card info yippee), specified my hardware/network requirements for the VM, and then created it with a simple tap of a button. </p>
+<blockquote>
+<p>The VM, itself, is an "e2 standard" instance which means it uses <strong><em><a href="https://en.wikipedia.org/wiki/Broadwell_(microarchitecture)" target="”_blank”">Intel Core Broadwell processors</a></em></strong>. 
+The VM’s hardware specs include two <strong><em><a href="https://www.techtarget.com/whatis/definition/virtual-CPU-vCPU" target="”_blank”">vCPUs</a></em></strong> ( virtual CPUs), 16 GB of RAM, and 128<sup id="fnref:storage overkill"><a class="footnote-ref" href="#fn:storage overkill">4</a></sup> GB of storage.</p>
+</blockquote>
+<h3>the OS</h3>
+<p>The old tech stack used RPO, Raspberry Pi OS. 
+RPO, if you couldn’t tell from the name, was made for the Raspberry Pi because it needed something more suitable for a single-board computer. 
+Asides from that, I wanted to familiarize myself with a Linux flavor I hadn’t used before.</p>
+<p>On the flip side, working in the cloud gives me flexibility on what OS I can choose to use. 
+I’m pretty familiar with using <strong><em><a href="https://en.wikipedia.org/wiki/Ubuntu" target="”_blank”">Ubuntu</a></em></strong>, a Linux distribution, from messing around with VMs on my personal machine and class assignments.
+I wanted to quickly get the website back and running, so I just went with what I was most familiar with!</p>
+<h3>the web restaurant</h3>
+<p>I used nginx as an HTTP web server to serve the static content I generated using <strong><em><a href="https://getpelican.com/#quickstart" target="”_blank”">Pelican</a></em></strong>, a static site generator. 
+nginx is an incredibly useful tool that removes the need to create an HTTP web server from scratch<sup id="fnref:future project"><a class="footnote-ref" href="#fn:future project">5</a></sup>.</p>
+<h3>the arcane magic of DNS, or how did i set up my URL</h3>
+<p>With my new set-up, I didn’t have to worry about DDNS because there was no Internet traffic going through my home router. 
+In the GCP console, I configured my external IP address to be static. 
+Then, I obtained a lease to the domain <code>aadith-thiruvallarai.com</code> from <strong><em><a href="https://www.squarespace.com/" target="”_blank”">Squarespace</a></em></strong>.</p>
+<blockquote>
+<p>You can’t actually own a URL. 
+You can only lease it from companies like GoDaddy and Squarespace.</p>
+</blockquote>
+<p>Then, I created two custom records: an A record with the hostname <code>@</code> pointing to my VM’s external IP address and a CNAME record with the hostname <code>www.aadith-thiruvallarai.com</code> pointing to <code>aadith-thiruvallarai.com</code></p>
+<h3>the final choices</h3>
+<p>So, here’s the new and improved stack:</p>
+<ol>
+<li>Cloud Infrastructure: GCP</li>
+<li>Operating System: Ubuntu</li>
+<li>Web Server: nginx</li>
+<li>Content type: some good ol’ HTML/CSS<sup id="fnref:basic website"><a class="footnote-ref" href="#fn:basic website">2</a></sup></li>
+</ol>
+<h2>updates</h2>
+<h3>April 14th, 2025</h3>
+<ul>
+<li>Accidentally published the blog post early because I wanted to test the DNS settings with a new blog post</li>
+<li>Completed the blog post</li>
+</ul>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:weekly users">
+<p>Yeah, I'm proud to admit that I have at least 1 weekly visitor! 
+On a more serious note, I didn't figure out how to track how many people were visiting the site. My numbers are solely based on the friends I shared the website with... yeah that's right I have 1-3 friends, at least!&#160;<a class="footnote-backref" href="#fnref:weekly users" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:basic website">
+<p>I’m sorry for not using the new React framework of the day :( … 
+I’m not actually sorry :p. 
+I just wanted to keep it simple, stupid, and short!
+If you’re reading this a second time… I still stand by what I said :p!&#160;<a class="footnote-backref" href="#fnref:basic website" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:basic website" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:cloud meme">
+<p>I’m envisioning the <strong><em><a href="https://knowyourmeme.com/memes/old-man-yells-at-cloud" target="”_blank”">“Old Man Yells at Cloud”</a></em></strong> meme.&#160;<a class="footnote-backref" href="#fnref:cloud meme" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:storage overkill">
+<p>For what I need this VM to do, this amount of storage is definitely overkill.&#160;<a class="footnote-backref" href="#fnref:storage overkill" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:future project">
+<p>Maybe I should make an HTTP web server in C, C++, or Rust? 
+I don’t know, shoot me an email if you’d like to see me do this and blog about it!&#160;<a class="footnote-backref" href="#fnref:future project" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+    </article>
+    <section class="post-nav">
+        <div id="left-page">
+            <div id="left-link">
+            </div>
+        </div>
+        <div id="right-page">
+            <div id="right-link">
+                <a href="/why-start-a-blog.html">why start a blog? </a>
+                <div id="right-arrow"><i class="fa fa-chevron-circle-right"></i></div>
+            </div>
+        </div>
+    </section>
+    <div>
+    </div>
+</main>
+    <footer>
+        <h6>
+            Rendered by <a href="http://getpelican.com/">Pelican</a> &nbsp;&bull;&nbsp; Theme by <a href="https://github.com/aleylara/Peli-Kiera">Peli-Kiera</a> 
+            &nbsp;&bull;&nbsp; Copyright &copy &nbsp;&#8209;&nbsp; aadith thiruvallarai         </h6>
+    </footer>
+</div>
+</body>
+</html>
