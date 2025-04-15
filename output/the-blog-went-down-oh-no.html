@@ -64,7 +64,7 @@
                     <time datetime="2025-04-15 00:00:00-05:00">Modified
                         on Apr 15, 2025</time>
                 </li>
-                <li>6 min read</li>
+                <li>7 min read</li>
                 <li>
                     Categories:
                     <a href="/category/sisyphean-didactic-auto-flagellator.html"><em>sisyphean didactic auto-flagellator</em></a>
@@ -75,7 +75,7 @@
                 </li>
             </ul>
         </aside>
-        <p>If you're my weekly 1-3 visitors<sup id="fnref:weekly users"><a class="footnote-ref" href="#fn:weekly users">1</a></sup>, you may have noticed the website went down… 
+        <p>If you're my weekly visitor<sup id="fnref:weekly users"><a class="footnote-ref" href="#fn:weekly users">1</a></sup>, you may have noticed the website went down… 
 It seems that when you host a website using 
 <strong><em><a href="https://en.wikipedia.org/wiki/Dynamic_DNS" target="_blank">DDNS</a></em></strong> (dynamic <strong><em><a href="https://en.wikipedia.org/wiki/Domain_Name_System" target="”_blank”">DNS</a></em></strong>) on your home WiFi, your ISP (internet service provider) may not be a huge fan.</p>
 <blockquote>
@@ -87,18 +87,20 @@ DNS allows you to use a human-friendly domain name, or URL, instead of the compu
 Then, DNS servers will help find the IP address related to the website you’re seeking and provide it to your computer.</p>
 </blockquote>
 <p>Previously, when I had my website’s related files on my <strong><em><a href="https://en.wikipedia.org/wiki/Raspberry_Pi" target="”_blank”">Raspberry Pi</a></em></strong>, I used DDNS with the help of a company <strong><em><a href="https://en.wikipedia.org/wiki/No-IP" target="”_blank”">No-IP</a></em></strong>​​.
-No-IP’s DDNS application would run every 5-10 minutes on my Raspberry Pi telling No-IP’s servers if my external IP address had changed.
+No-IP’s DDNS application would run every five to ten minutes on my Raspberry Pi telling No-IP’s servers if my external IP address had changed.
 If it did change, they would make sure to publish new DNS records saying what IP address my website should point towards.</p>
 <blockquote>
 <p>Every computer in a home network talks to the internet using the home router. 
-The home router has an external, or public-facing, IP address used to access websites. 
+The home router has an external, or public-facing, IP address used to access the Internet. 
 This IP address can be changed by an ISP without warning. 
 In order to utilize DNS, it’s important to know what your IP address is at all times and rely on the fact that it will not change over time. 
 This is where DDNS comes into play.</p>
 </blockquote>
 <p>I noticed that the WiFi would intermittently go down on a daily basis – of course there couldn’t possibly be a reason for this…</p>
-<p>My best conclusion is that my ISP didn't like No-IP’s application having periodic traffic to confirm my home router's external IP address. Otherwise, it could have been a malicious actor or a bot was actually scanning my network/ports, or some other unforeseeable reason.</p>
-<h2>choosing the tech stack</h2>
+<p>My best conclusion is that my ISP didn't like the fact that I was hosting a website on the network with many visitors (at least one a week). 
+Alternatively, the issue could be with No-IP’s application having periodic traffic to confirm my home router's external IP address. 
+Otherwise, it could have been a malicious actor or a bot was actually scanning my network/ports.</p>
+<h2>choosing the right tech stack</h2>
 <blockquote>
 <p>A tech stack is a list of all the technology services used to run a single application or website.</p>
 </blockquote>
@@ -106,14 +108,17 @@ This is where DDNS comes into play.</p>
 <ol>
 <li>“On-premise” hardware: Raspberry Pi</li>
 <li>Operating System: <strong><em><a href="https://en.wikipedia.org/wiki/Raspberry_Pi_OS" target="”_blank”">Raspberry Pi OS</a></em></strong>, based on <strong><em><a href="https://en.wikipedia.org/wiki/Debian" target="”_blank”">Debian</a></em></strong> (a <strong><em><a href="https://en.wikipedia.org/wiki/Linux" target="”_blank”">Linux</a></em></strong> distribution)</li>
-<li>Web Server: <strong><em><a href="https://nginx.org/en/" target="”_blank”">nginx</a></em></strong></li>
+<li><a href="https://en.wikipedia.org/wiki/Web_server" target="”_blank”">Web Server</a>: <strong><em><a href="https://nginx.org/en/" target="”_blank”">nginx</a></em></strong></li>
 <li>Content Type: some good ol’ HTML and CSS<sup id="fnref2:basic website"><a class="footnote-ref" href="#fn:basic website">2</a></sup></li>
 </ol>
+<blockquote>
+<p>A web server distributes web content that has been requested.</p>
+</blockquote>
 <h3>to <strong><em><a href="https://en.wikipedia.org/wiki/Cloud_computing" target="”_blank”">cloud</a></em></strong> or to self-host, that is the question</h3>
 <p>After much deliberation and moral indignation at the choices that led me here, I unwillingly chose to switch to using the cloud<sup id="fnref:cloud meme"><a class="footnote-ref" href="#fn:cloud meme">3</a></sup>. 
-Instead of being cool and hosting a website on a goddamn Raspberry Pi, I'm now hosting the website in <strong><em><a href="https://en.wikipedia.org/wiki/Google_Cloud_Platform" target="”_blank”">GCP</a></em></strong> (the Google Cloud Platform). 
+Instead of being cool and hosting a website on a Raspberry Pi – really cool to me if you were asking – I'm now hosting the website on <strong><em><a href="https://en.wikipedia.org/wiki/Google_Cloud_Platform" target="”_blank”">GCP</a></em></strong> (the Google Cloud Platform). 
 I was really proud of myself for getting hardware I could touch and feel to host a website readily accessible from the Internet. 
-But, in order to mitigate the ISP issues from occurring, I had no choice but to host the website remotely. 
+But, in order to prevent the ISP attack messages and WiFi issues, I had no choice but to host the website remotely. 
 It’s not like I have another network laying around so the next best thing is to use the cloud. </p>
 <h3>the software’s hardware</h3>
 <p>I left a lot of the hardware set up details out in my previous blog post simply because I felt like it would be a blog post of its own. 
@@ -134,15 +139,28 @@ The VM’s hardware specs include two <strong><em><a href="https://www.techtarge
 <h3>the OS</h3>
 <p>The old tech stack used RPO, Raspberry Pi OS. 
 RPO, if you couldn’t tell from the name, was made for the Raspberry Pi because it needed something more suitable for a single-board computer. 
-Asides from that, I wanted to familiarize myself with a Linux flavor I hadn’t used before.</p>
+Besides that, I wanted to familiarize myself with a Linux flavor I hadn’t used before.</p>
 <p>On the flip side, working in the cloud gives me flexibility on what OS I can choose to use. 
-I’m pretty familiar with using <strong><em><a href="https://en.wikipedia.org/wiki/Ubuntu" target="”_blank”">Ubuntu</a></em></strong>, a Linux distribution, from messing around with VMs on my personal machine and class assignments.
+I’m pretty familiar with using <strong><em><a href="https://en.wikipedia.org/wiki/Ubuntu" target="”_blank”">Ubuntu</a></em></strong>, a Linux distribution, from messing around with VMs on my personal machine and class assignments during my undergrad.
 I wanted to quickly get the website back and running, so I just went with what I was most familiar with!</p>
 <h3>the web restaurant</h3>
-<p>I chose nginx as my web server because it is known to outperform other popular web servers in benchmark tests, especially when it comes to serving static content. 
-All it takes is making some changes in the nginx-specific config file for my
-nginx is an incredibly useful tool that removes the need to create an HTTP web server from scratch<sup id="fnref:future project"><a class="footnote-ref" href="#fn:future project">5</a></sup>. 
-I generated using <strong><em><a href="https://getpelican.com/#quickstart" target="”_blank”">Pelican</a></em></strong>, a static site generator.</p>
+<p>I chose nginx as my web server because it is known to outperform other popular web server implementations in benchmark tests, especially when it comes to serving static content.</p>
+<blockquote>
+<p>Static content (or web pages) is delivered to a web browser exactly as stored. 
+The web browser then converts the content to the web page for you to view. 
+In contrast, dynamic content is generated by a web application which is then processed by the web browser.</p>
+</blockquote>
+<p>nginx is an incredibly useful tool that removes the need to create an <a href="https://en.wikipedia.org/wiki/HTTP" target="”_blank”">HTTP (Hypertext Transfer Protocol)</a> web server from scratch<sup id="fnref:future project"><a class="footnote-ref" href="#fn:future project">5</a></sup>. </p>
+<blockquote>
+<p>HTTP is the protocol, specification/method, by which information is communicated over the World Wide Web.</p>
+</blockquote>
+<p>Thankfully, there was no need to make <a href="https://en.wikipedia.org/wiki/HTML" target="”_blank”">HTML (Hypertext Markup Language)</a> and <a href="https://en.wikipedia.org/wiki/CSS" target="”_blank”">CSS (Cascading Style Sheets)</a> files from scratch.</p>
+<blockquote>
+<p>HTML is a markup language used to create the basic structure and text for each web page in a website. 
+CSS is a style sheet language used for the styling and making the webpage/website visually appealing. 
+<a href="https://en.wikipedia.org/wiki/JavaScript" target="”_blank”">JavaScript</a> is a programming language used for any logic that needs to be handled.</p>
+</blockquote>
+<p>I used <strong><em><a href="https://getpelican.com/#quickstart" target="”_blank”">Pelican</a></em></strong>, a static site generator, to convert <a href="https://en.wikipedia.org/wiki/Markdown" target="”_blank”">Markdown</a>, essentially plaintext, files to HTML and CSS files.</p>
 <h3>the arcane magic of DNS, or how did i set up my URL</h3>
 <p>With my new set-up, I didn’t have to worry about DDNS because there was no Internet traffic going through my home router. 
 In the GCP console, I configured my external IP address to be static. 
@@ -183,14 +201,14 @@ An A record points the URL to the website’s server’s IP address.</p>
 <hr>
 <ol>
 <li id="fn:weekly users">
-<p>Yeah, I'm proud to admit that I have at least 1 weekly visitor! 
-On a more serious note, I didn't figure out how to track how many people were visiting the site. My numbers are solely based on the friends I shared the website with... yeah that's right I have 1-3 friends, at least!&#160;<a class="footnote-backref" href="#fnref:weekly users" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Yeah, I'm proud to admit that I have at least one weekly visitor! 
+On a more serious note, I didn't figure out how to track how many people were visiting the site. My numbers are solely based on the friends I shared the website with... yeah that's right I have one friend, at least!&#160;<a class="footnote-backref" href="#fnref:weekly users" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:basic website">
 <p>I’m sorry for not using the new React framework of the day :( … 
 I’m not actually sorry :p. 
 I just wanted to keep it simple, stupid, and short!
-If you’re reading this a second time… I still stand by what I said :p!&#160;<a class="footnote-backref" href="#fnref:basic website" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:basic website" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+If you’re reading this a second time… I still stand by what I said :p&#160;<a class="footnote-backref" href="#fnref:basic website" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:basic website" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cloud meme">
 <p>I’m envisioning the <strong><em><a href="https://knowyourmeme.com/memes/old-man-yells-at-cloud" target="”_blank”">“Old Man Yells at Cloud”</a></em></strong> meme.&#160;<a class="footnote-backref" href="#fnref:cloud meme" title="Jump back to footnote 3 in the text">&#8617;</a></p>

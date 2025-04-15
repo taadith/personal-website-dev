@@ -6,7 +6,7 @@ Tags: meta
 Slug: the-blog-went-down-oh-no
 Author: aadith thiruvallarai
 
-If you're my weekly 1-3 visitors[^weekly users], you may have noticed the website went down… 
+If you're my weekly visitor[^weekly users], you may have noticed the website went down… 
 It seems that when you host a website using 
 ***[DDNS](https://en.wikipedia.org/wiki/Dynamic_DNS){:target="_blank"}*** (dynamic ***[DNS](https://en.wikipedia.org/wiki/Domain_Name_System){:target=”_blank”}***) on your home WiFi, your ISP (internet service provider) may not be a huge fan.
 
@@ -19,21 +19,23 @@ DNS allows you to use a human-friendly domain name, or URL, instead of the compu
 Then, DNS servers will help find the IP address related to the website you’re seeking and provide it to your computer.
 
 Previously, when I had my website’s related files on my ***[Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi){:target=”_blank”}***, I used DDNS with the help of a company ***[No-IP](https://en.wikipedia.org/wiki/No-IP){:target=”_blank”}***​​.
-No-IP’s DDNS application would run every 5-10 minutes on my Raspberry Pi telling No-IP’s servers if my external IP address had changed.
+No-IP’s DDNS application would run every five to ten minutes on my Raspberry Pi telling No-IP’s servers if my external IP address had changed.
 If it did change, they would make sure to publish new DNS records saying what IP address my website should point towards.
 
 > 
 Every computer in a home network talks to the internet using the home router. 
-The home router has an external, or public-facing, IP address used to access websites. 
+The home router has an external, or public-facing, IP address used to access the Internet. 
 This IP address can be changed by an ISP without warning. 
 In order to utilize DNS, it’s important to know what your IP address is at all times and rely on the fact that it will not change over time. 
 This is where DDNS comes into play.
 
 I noticed that the WiFi would intermittently go down on a daily basis – of course there couldn’t possibly be a reason for this…
 
-My best conclusion is that my ISP didn't like No-IP’s application having periodic traffic to confirm my home router's external IP address. Otherwise, it could have been a malicious actor or a bot was actually scanning my network/ports, or some other unforeseeable reason.
+My best conclusion is that my ISP didn't like the fact that I was hosting a website on the network with many visitors (at least one a week). 
+Alternatively, the issue could be with No-IP’s application having periodic traffic to confirm my home router's external IP address. 
+Otherwise, it could have been a malicious actor or a bot was actually scanning my network/ports.
 
-## choosing the tech stack
+## choosing the right tech stack
 
 > 
 A tech stack is a list of all the technology services used to run a single application or website.
@@ -42,15 +44,18 @@ What I was using before I had to shutdown the website:
 
 1. “On-premise” hardware: Raspberry Pi
 2. Operating System: ***[Raspberry Pi OS](https://en.wikipedia.org/wiki/Raspberry_Pi_OS){:target=”_blank”}***, based on ***[Debian](https://en.wikipedia.org/wiki/Debian){:target=”_blank”}*** (a ***[Linux](https://en.wikipedia.org/wiki/Linux){:target=”_blank”}*** distribution)
-3. Web Server: ***[nginx](https://nginx.org/en/){:target=”_blank”}***
+3. [Web Server](https://en.wikipedia.org/wiki/Web_server){:target=”_blank”}: ***[nginx](https://nginx.org/en/){:target=”_blank”}***
 4. Content Type: some good ol’ HTML and CSS[^basic website]
+
+> 
+A web server distributes web content that has been requested.
 
 ### to ***[cloud](https://en.wikipedia.org/wiki/Cloud_computing){:target=”_blank”}*** or to self-host, that is the question
 
 After much deliberation and moral indignation at the choices that led me here, I unwillingly chose to switch to using the cloud[^cloud meme]. 
-Instead of being cool and hosting a website on a goddamn Raspberry Pi, I'm now hosting the website in ***[GCP](https://en.wikipedia.org/wiki/Google_Cloud_Platform){:target=”_blank”}*** (the Google Cloud Platform). 
+Instead of being cool and hosting a website on a Raspberry Pi – really cool to me if you were asking – I'm now hosting the website on ***[GCP](https://en.wikipedia.org/wiki/Google_Cloud_Platform){:target=”_blank”}*** (the Google Cloud Platform). 
 I was really proud of myself for getting hardware I could touch and feel to host a website readily accessible from the Internet. 
-But, in order to mitigate the ISP issues from occurring, I had no choice but to host the website remotely. 
+But, in order to prevent the ISP attack messages and WiFi issues, I had no choice but to host the website remotely. 
 It’s not like I have another network laying around so the next best thing is to use the cloud. 
 
 ### the software’s hardware
@@ -77,18 +82,34 @@ The VM’s hardware specs include two ***[vCPUs](https://www.techtarget.com/what
 
 The old tech stack used RPO, Raspberry Pi OS. 
 RPO, if you couldn’t tell from the name, was made for the Raspberry Pi because it needed something more suitable for a single-board computer. 
-Asides from that, I wanted to familiarize myself with a Linux flavor I hadn’t used before.
+Besides that, I wanted to familiarize myself with a Linux flavor I hadn’t used before.
 
 On the flip side, working in the cloud gives me flexibility on what OS I can choose to use. 
-I’m pretty familiar with using ***[Ubuntu](https://en.wikipedia.org/wiki/Ubuntu){:target=”_blank”}***, a Linux distribution, from messing around with VMs on my personal machine and class assignments.
+I’m pretty familiar with using ***[Ubuntu](https://en.wikipedia.org/wiki/Ubuntu){:target=”_blank”}***, a Linux distribution, from messing around with VMs on my personal machine and class assignments during my undergrad.
 I wanted to quickly get the website back and running, so I just went with what I was most familiar with!
 
 ### the web restaurant
 
-I chose nginx as my web server because it is known to outperform other popular web servers in benchmark tests, especially when it comes to serving static content. 
-All it takes is making some changes in the nginx-specific config file for my
-nginx is an incredibly useful tool that removes the need to create an HTTP web server from scratch[^future project]. 
-I generated using ***[Pelican](https://getpelican.com/#quickstart){:target=”_blank”}***, a static site generator.
+I chose nginx as my web server because it is known to outperform other popular web server implementations in benchmark tests, especially when it comes to serving static content.
+
+> 
+Static content (or web pages) is delivered to a web browser exactly as stored. 
+The web browser then converts the content to the web page for you to view. 
+In contrast, dynamic content is generated by a web application which is then processed by the web browser.
+
+nginx is an incredibly useful tool that removes the need to create an [HTTP (Hypertext Transfer Protocol)](https://en.wikipedia.org/wiki/HTTP){:target=”_blank”} web server from scratch[^future project]. 
+
+> 
+HTTP is the protocol, specification/method, by which information is communicated over the World Wide Web.
+
+Thankfully, there was no need to make [HTML (Hypertext Markup Language)](https://en.wikipedia.org/wiki/HTML){:target=”_blank”} and [CSS (Cascading Style Sheets)](https://en.wikipedia.org/wiki/CSS){:target=”_blank”} files from scratch.
+
+> 
+HTML is a markup language used to create the basic structure and text for each web page in a website. 
+CSS is a style sheet language used for the styling and making the webpage/website visually appealing. 
+[JavaScript](https://en.wikipedia.org/wiki/JavaScript){:target=”_blank”} is a programming language used for any logic that needs to be handled.
+
+I used ***[Pelican](https://getpelican.com/#quickstart){:target=”_blank”}***, a static site generator, to convert [Markdown](https://en.wikipedia.org/wiki/Markdown){:target=”_blank”}, essentially plaintext, files to HTML and CSS files.
 
 ### the arcane magic of DNS, or how did i set up my URL
 
@@ -134,17 +155,17 @@ So, here’s the new and improved stack:
 - Completed the blog post
 
 [^weekly users]: 
-Yeah, I'm proud to admit that I have at least 1 weekly visitor! 
-On a more serious note, I didn't figure out how to track how many people were visiting the site. My numbers are solely based on the friends I shared the website with... yeah that's right I have 1-3 friends, at least!
+Yeah, I'm proud to admit that I have at least one weekly visitor! 
+On a more serious note, I didn't figure out how to track how many people were visiting the site. My numbers are solely based on the friends I shared the website with... yeah that's right I have one friend, at least!
 
 [^basic website]: 
 I’m sorry for not using the new React framework of the day :( … 
 I’m not actually sorry :p. 
 I just wanted to keep it simple, stupid, and short!
-If you’re reading this a second time… I still stand by what I said :p!
+If you’re reading this a second time… I still stand by what I said :p
 
 [^cloud meme]: 
-I’m envisioning the ***[“Old Man Yells at Cloud”](https://knowyourmeme.com/memes/old-man-yells-at-cloud){target=”_blank”}*** meme.
+I’m envisioning the ***[“Old Man Yells at Cloud”](https://knowyourmeme.com/memes/old-man-yells-at-cloud){:target=”_blank”}*** meme.
 
 [^storage overkill]: 
 For what I need this VM to do, this amount of storage is definitely overkill.
