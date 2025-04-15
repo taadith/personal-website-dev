@@ -5,7 +5,7 @@ Slug: projects
 - Maintaining a *fully-developed* personal static website through a Linux and nginx stack on Google Cloud, averaging 20 weekly users
 - Writing a tech-related blog post every 1-4 weeks
 
-## [Created a Personal Website (which lasted for only 5 days)]
+## Created a Personal Website (which lasted for only 5 days)
 - Maintained a *fully-developed* personal static website through a Linux and nginx stack on Raspberry Pi, averaging 20 weekly users
 
 ## ***[Developing the "clox" Programming Language](https://github.com/taadith/crafting-interpreters){:target="_blank"}***
