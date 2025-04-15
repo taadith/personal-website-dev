@@ -61,7 +61,7 @@ Funnily enough, I actually found the phrase “sisyphean didactic auto-flagellat
 - Made this blog post consistent with other blog posts’ structuring
 
 [^lost Blogger account]: 
-Unfortunately, I made the Blogger through my school account which got deleted as soon as I graduated from high school :( 
+Unfortunately, I made the Blogger through my school account which got deleted as soon as I graduated from high school `:(`.
 I would have loved to read through some of my posts and even share some with y’all!
 
 [^writing process]: and then writing some more… editing some more… writing some more… 

@@ -159,10 +159,10 @@ Yeah, I'm proud to admit that I have at least one weekly visitor!
 On a more serious note, I didn't figure out how to track how many people were visiting the site. My numbers are solely based on the friends I shared the website with... yeah that's right I have one friend, at least!
 
 [^basic website]: 
-I’m sorry for not using the new React framework of the day :( … 
-I’m not actually sorry :p. 
+I’m sorry for not using the new React framework of the day `:(` … 
+I’m not actually sorry `:p`. 
 I just wanted to keep it simple, stupid, and short!
-If you’re reading this a second time… I still stand by what I said :p
+If you’re reading this a second time… I still stand by what I said `:p`
 
 [^cloud meme]: 
 I’m envisioning the ***[“Old Man Yells at Cloud”](https://knowyourmeme.com/memes/old-man-yells-at-cloud){:target=”_blank”}*** meme.
