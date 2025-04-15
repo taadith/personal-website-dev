@@ -1,6 +1,6 @@
 Title: why start a blog?
 Date: 2025-03-20
-Modified: 2025-04-14
+Modified: 2025-04-15
 Category: sisyphean didactic auto-flagellator
 Tags: meta
 Slug: why-start-a-blog
@@ -56,7 +56,7 @@ Funnily enough, I actually found the phrase “sisyphean didactic auto-flagellat
 
 ## updates
 
-### April 14th, 2025
+### April 15th, 2025
 
 - Made this blog post consistent with other blog posts’ structuring
 

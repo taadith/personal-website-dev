@@ -1,6 +1,6 @@
 Title: the blog went down... oh no!
 Date: 2025-04-08
-Modified: 2025-04-14
+Modified: 2025-04-15
 Category: sisyphean didactic auto-flagellator
 Tags: meta
 Slug: the-blog-went-down-oh-no
@@ -41,7 +41,7 @@ A tech stack is a list of all the technology services used to run a single appli
 What I was using before I had to shutdown the website:
 
 1. “On-premise” hardware: Raspberry Pi
-2. Operating System: ***[Raspberry Pi OS](https://en.wikipedia.org/wiki/Raspberry_Pi_OS){:target=”_blank”}***, based off of ***[Debian](https://en.wikipedia.org/wiki/Debian){:target=”_blank”}*** (a ***[Linux](https://en.wikipedia.org/wiki/Linux){:target=”_blank”}*** distribution)
+2. Operating System: ***[Raspberry Pi OS](https://en.wikipedia.org/wiki/Raspberry_Pi_OS){:target=”_blank”}***, based on ***[Debian](https://en.wikipedia.org/wiki/Debian){:target=”_blank”}*** (a ***[Linux](https://en.wikipedia.org/wiki/Linux){:target=”_blank”}*** distribution)
 3. Web Server: ***[nginx](https://nginx.org/en/){:target=”_blank”}***
 4. Content Type: some good ol’ HTML and CSS[^basic website]
 
@@ -85,8 +85,10 @@ I wanted to quickly get the website back and running, so I just went with what I
 
 ### the web restaurant
 
-I used nginx as an HTTP web server to serve the static content I generated using ***[Pelican](https://getpelican.com/#quickstart){:target=”_blank”}***, a static site generator. 
-nginx is an incredibly useful tool that removes the need to create an HTTP web server from scratch[^future project].
+I chose nginx as my web server because it is known to outperform other popular web servers in benchmark tests, especially when it comes to serving static content. 
+All it takes is making some changes in the nginx-specific config file for my
+nginx is an incredibly useful tool that removes the need to create an HTTP web server from scratch[^future project]. 
+I generated using ***[Pelican](https://getpelican.com/#quickstart){:target=”_blank”}***, a static site generator.
 
 ### the arcane magic of DNS, or how did i set up my URL
 
@@ -98,7 +100,22 @@ Then, I obtained a lease to the domain `aadith-thiruvallarai.com` from ***[Squar
 You can’t actually own a URL. 
 You can only lease it from companies like GoDaddy and Squarespace.
 
-Then, I created two custom records: an A record with the hostname `@` pointing to my VM’s external IP address and a CNAME record with the hostname `www.aadith-thiruvallarai.com` pointing to `aadith-thiruvallarai.com`
+Configuring DNS involves creating and publishing what is known as DNS records.
+
+> 
+“DNS records are sets of instructions that live on DNS servers. 
+These instructions are vital to the success of a DNS lookup.” 
+- Cloudflare
+
+DNS records come in many flavors but the only one I had to be concerned with was an A record.
+An A record points the URL to the website’s server’s IP address.
+
+<figure>
+  <img src="/images/blog/2025/april/the-blog-went-down-oh-no/custom-records.png" alt="Squarespace Custom Records" width="600">
+  <figcaption style="text-align:center;">Squarespace Custom Records</figcaption>
+</figure>
+
+In Squarespace, I created an A record with the hostname (data field) set as `@`, shorthand for the domain `aadith-thiruvallarai.com`, pointing to my VM’s public IP address.
 
 ### the final choices
 
@@ -111,7 +128,7 @@ So, here’s the new and improved stack:
 
 ## updates
 
-### April 14th, 2025
+### April 15th, 2025
 
 - Accidentally published the blog post early because I wanted to test the DNS settings with a new blog post
 - Completed the blog post

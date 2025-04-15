@@ -1,14 +1,12 @@
 Title: projects
 Slug: projects
 
-## ***[Creating a Personal Website (which lasted for only 5 days)](https://aadith-thiruvallarai.onthewifi.com)***
+## ***[Created & Maintaining a Personal Website](https://github.com/taadith/personal-website-dev){:target="_blank"}***
 - Maintaining a *fully-developed* personal static website through a Linux and nginx stack on Google Cloud, averaging 20 weekly users
-- Writing a tech-related blog every 1-4 weeks
+- Writing a tech-related blog post every 1-4 weeks
 
-***figure out new link later!***
-## ***[Self-Hosting and Creating a Personal Website (which lasted for only 5 days)](https://aadith-thiruvallarai.onthewifi.com)***
-- Maintaining a fully-developed personal static website through a Linux and nginx stack on a Raspberry Pi, averaging 20 weekly users
-- Writing a tech-related blog every 1-4 weeks
+## [Created a Personal Website (which lasted for only 5 days)]
+- Maintained a *fully-developed* personal static website through a Linux and nginx stack on Raspberry Pi, averaging 20 weekly users
 
 ## ***[Developing the "clox" Programming Language](https://github.com/taadith/crafting-interpreters){:target="_blank"}***
 - Follows along Robert Nystrom's Crafting Interpreters
