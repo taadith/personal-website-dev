@@ -26,7 +26,7 @@ LINKS = (
 # Social widget
 SOCIAL = (
     ('github', 'https://github.com/taadith'),
-    ('linkedin', 'https://www.linkedin.com/in/aadith-thiruvallarai/'),
+    ('linkedin', 'https://www.linkedin.com/in/aadithth/'),
 )
 
 DEFAULT_PAGINATION = 10

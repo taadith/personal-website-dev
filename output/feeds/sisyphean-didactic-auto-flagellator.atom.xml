@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>aadith thiruvallarai - sisyphean didactic auto-flagellator</title><link href="https://aadith-thiruvallarai.com/" rel="alternate"></link><link href="https://aadith-thiruvallarai.com/feeds/sisyphean-didactic-auto-flagellator.atom.xml" rel="self"></link><id>https://aadith-thiruvallarai.com/</id><updated>2025-04-15T00:00:00-05:00</updated><entry><title>the blog went down... oh no!</title><link href="https://aadith-thiruvallarai.com/the-blog-went-down-oh-no.html" rel="alternate"></link><published>2025-04-08T00:00:00-05:00</published><updated>2025-04-15T00:00:00-05:00</updated><author><name>aadith thiruvallarai</name></author><id>tag:aadith-thiruvallarai.com,2025-04-08:/the-blog-went-down-oh-no.html</id><summary type="html">&lt;p&gt;If you're my weekly visitor&lt;sup id="fnref:weekly users"&gt;&lt;a class="footnote-ref" href="#fn:weekly users"&gt;1&lt;/a&gt;&lt;/sup&gt;, you may have noticed the website went down… 
+It seems that when you host a website using 
+&lt;strong&gt;&lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Dynamic_DNS" target="_blank"&gt;DDNS&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt; (dynamic &lt;strong&gt;&lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Domain_Name_System" target="”_blank”"&gt;DNS&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;) on your home WiFi, your ISP (internet service provider) may not be a huge fan.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Accessing a website is tantamount to accessing files hosted …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;If you're my weekly visitor&lt;sup id="fnref:weekly users"&gt;&lt;a class="footnote-ref" href="#fn:weekly users"&gt;1&lt;/a&gt;&lt;/sup&gt;, you may have noticed the website went down… 
+It seems that when you host a website using 
+&lt;strong&gt;&lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Dynamic_DNS" target="_blank"&gt;DDNS&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt; (dynamic &lt;strong&gt;&lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Domain_Name_System" target="”_blank”"&gt;DNS&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;) on your home WiFi, your ISP (internet service provider) may not be a huge fan.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Accessing a website is tantamount to accessing files hosted by or on a computer, often called a server, through the Internet.
+The way our computer, often called the client, can talk to the server is through the use of an IP (Internet Protocol) address, the Internet version of a mailing address.
+It would be a pain if you had to remember the IP address for every website you want to use on a daily basis.
+Thankfully, we don’t have to memorize every website’s IP address because of DNS (domain name system).
+DNS allows you to use a human-friendly domain name, or URL, instead of the computer's IP address.
+Then, DNS servers will help find the IP address related to the website you’re seeking and provide it to your computer.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Previously, when I had my website’s related files on my &lt;strong&gt;&lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Raspberry_Pi" target="”_blank”"&gt;Raspberry Pi&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;, I used DDNS with the help of a company &lt;strong&gt;&lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/No-IP" target="”_blank”"&gt;No-IP&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;​​.
+No-IP’s DDNS application would run every five to ten minutes on my Raspberry Pi telling No-IP’s servers if my external IP address had changed.
+If it did change, they would make sure to publish new DNS records saying what IP address my website should point towards.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Every computer in a home network talks to the internet using the home router. 
+The home router has an external, or public-facing, IP address used to access the Internet. 
+This IP address can be changed by an ISP without warning. 
+In order to utilize DNS, it’s important to know what your IP address is at all times and rely on the fact that it will not change over time. 
+This is where DDNS comes into play.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I noticed that the WiFi would intermittently go down on a daily basis – of course there couldn’t possibly be a reason for this…&lt;/p&gt;
+&lt;p&gt;My best conclusion is that my ISP didn't like the fact that I was hosting a website on the network with many visitors (at least one a week). 
+Alternatively, the issue could be with No-IP’s application having periodic traffic to confirm my home router's external IP address. 
+Otherwise, it could have been a malicious actor or a bot was actually scanning my network/ports.&lt;/p&gt;
+&lt;h2&gt;choosing the right tech stack&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A tech stack is a list of all the technology services used to run a single application or website.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;What I was using before I had to shutdown the website:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;“On-premise” hardware: Raspberry Pi&lt;/li&gt;
+&lt;li&gt;Operating System: &lt;strong&gt;&lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Raspberry_Pi_OS" target="”_blank”"&gt;Raspberry Pi OS&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;, based on &lt;strong&gt;&lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Debian" target="”_blank”"&gt;Debian&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt; (a &lt;strong&gt;&lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Linux" target="”_blank”"&gt;Linux&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt; distribution)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Web_server" target="”_blank”"&gt;Web Server&lt;/a&gt;: &lt;strong&gt;&lt;em&gt;&lt;a href="https://nginx.org/en/" target="”_blank”"&gt;nginx&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Content Type: some good ol’ HTML and CSS&lt;sup id="fnref2:basic website"&gt;&lt;a class="footnote-ref" href="#fn:basic website"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A web server distributes web content that has been requested.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;to &lt;strong&gt;&lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Cloud_computing" target="”_blank”"&gt;cloud&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt; or to self-host, that is the question&lt;/h3&gt;
+&lt;p&gt;After much deliberation and moral indignation at the choices that led me here, I unwillingly chose to switch to using the cloud&lt;sup id="fnref:cloud meme"&gt;&lt;a class="footnote-ref" href="#fn:cloud meme"&gt;3&lt;/a&gt;&lt;/sup&gt;. 
+Instead of being cool and hosting a website on a Raspberry Pi – really cool to me if you were asking – I'm now hosting the website on &lt;strong&gt;&lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Google_Cloud_Platform" target="”_blank”"&gt;GCP&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt; (the Google Cloud Platform). 
+I was really proud of myself for getting hardware I could touch and feel to host a website readily accessible from the Internet. 
+But, in order to prevent the ISP attack messages and WiFi issues, I had no choice but to host the website remotely. 
+It’s not like I have another network laying around so the next best thing is to use the cloud. &lt;/p&gt;
+&lt;h3&gt;the software’s hardware&lt;/h3&gt;
+&lt;p&gt;I left a lot of the hardware set up details out in my previous blog post simply because I felt like it would be a blog post of its own. 
+Setting up the Raspberry Pi, to put it succinctly, involved putting some of the hardware together, downloading the appropriate 
+&lt;strong&gt;&lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/System_image" target="_blank"&gt;image&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;, and then 
+&lt;strong&gt;&lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Hardening_(computing)" target="”_blank”"&gt;hardening&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt; the OS, operating system. 
+I must admit, creating &lt;strong&gt;&lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Virtual_machine" target="”_blank”"&gt;VMs&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;, (virtual machines) in the cloud is much easier.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A VM is a software-defined computer existing only in code. 
+Most likely the machine, or computer, that you and I are using everyday is physically, or hardware-, defined.
+A VM, much like a hardware-defined machine, has a CPU, RAM, storage, and can even connect to the internet.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In the GCP console, I created a project to hold all of my resources related to running this website, attached a billing account (gave my credit card info yippee), specified my hardware/network requirements for the VM, and then created it with a simple tap of a button. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The VM, itself, is an "e2 standard" instance which means it uses &lt;strong&gt;&lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Broadwell_(microarchitecture)" target="”_blank”"&gt;Intel Core Broadwell processors&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;. 
+The VM’s hardware specs include two &lt;strong&gt;&lt;em&gt;&lt;a href="https://www.techtarget.com/whatis/definition/virtual-CPU-vCPU" target="”_blank”"&gt;vCPUs&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt; ( virtual CPUs), 16 GB of RAM, and 128&lt;sup id="fnref:storage overkill"&gt;&lt;a class="footnote-ref" href="#fn:storage overkill"&gt;4&lt;/a&gt;&lt;/sup&gt; GB of storage.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;the OS&lt;/h3&gt;
+&lt;p&gt;The old tech stack used RPO, Raspberry Pi OS. 
+RPO, if you couldn’t tell from the name, was made for the Raspberry Pi because it needed something more suitable for a single-board computer. 
+Besides that, I wanted to familiarize myself with a Linux flavor I hadn’t used before.&lt;/p&gt;
+&lt;p&gt;On the flip side, working in the cloud gives me flexibility on what OS I can choose to use. 
+I’m pretty familiar with using &lt;strong&gt;&lt;em&gt;&lt;a href="https://en.wikipedia.org/wiki/Ubuntu" target="”_blank”"&gt;Ubuntu&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;, a Linux distribution, from messing around with VMs on my personal machine and class assignments during my undergrad.
+I wanted to quickly get the website back and running, so I just went with what I was most familiar with!&lt;/p&gt;
+&lt;h3&gt;the web restaurant&lt;/h3&gt;
+&lt;p&gt;I chose nginx as my web server because it is known to outperform other popular web server implementations in benchmark tests, especially when it comes to serving static content.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Static content (or web pages) is delivered to a web browser exactly as stored. 
+The web browser then converts the content to the web page for you to view. 
+In contrast, dynamic content is generated by a web application which is then processed by the web browser.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;nginx is an incredibly useful tool that removes the need to create an &lt;a href="https://en.wikipedia.org/wiki/HTTP" target="”_blank”"&gt;HTTP (Hypertext Transfer Protocol)&lt;/a&gt; web server from scratch&lt;sup id="fnref:future project"&gt;&lt;a class="footnote-ref" href="#fn:future project"&gt;5&lt;/a&gt;&lt;/sup&gt;. &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;HTTP is the protocol, specification/method, by which information is communicated over the World Wide Web.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Thankfully, there was no need to make &lt;a href="https://en.wikipedia.org/wiki/HTML" target="”_blank”"&gt;HTML (Hypertext Markup Language)&lt;/a&gt; and &lt;a href="https://en.wikipedia.org/wiki/CSS" target="”_blank”"&gt;CSS (Cascading Style Sheets)&lt;/a&gt; files from scratch.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;HTML is a markup language used to create the basic structure and text for each web page in a website. 
+CSS is a style sheet language used for the styling and making the webpage/website visually appealing. 
+&lt;a href="https://en.wikipedia.org/wiki/JavaScript" target="”_blank”"&gt;JavaScript&lt;/a&gt; is a programming language used for any logic that needs to be handled.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I used &lt;strong&gt;&lt;em&gt;&lt;a href="https://getpelican.com/#quickstart" target="”_blank”"&gt;Pelican&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;, a static site generator, to convert &lt;a href="https://en.wikipedia.org/wiki/Markdown" target="”_blank”"&gt;Markdown&lt;/a&gt;, essentially plaintext, files to HTML and CSS files.&lt;/p&gt;
+&lt;h3&gt;the arcane magic of DNS, or how did i set up my URL&lt;/h3&gt;
+&lt;p&gt;With my new set-up, I didn’t have to worry about DDNS because there was no Internet traffic going through my home router. 
+In the GCP console, I configured my external IP address to be static. 
+Then, I obtained a lease to the domain &lt;code&gt;aadith-thiruvallarai.com&lt;/code&gt; from &lt;strong&gt;&lt;em&gt;&lt;a href="https://www.squarespace.com/" target="”_blank”"&gt;Squarespace&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can’t actually own a URL. 
+You can only lease it from companies like GoDaddy and Squarespace.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Configuring DNS involves creating and publishing what is known as DNS records.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“DNS records are sets of instructions that live on DNS servers. 
+These instructions are vital to the success of a DNS lookup.” 
+- Cloudflare&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;DNS records come in many flavors but the only one I had to be concerned with was an A record.
+An A record points the URL to the website’s server’s IP address.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src="/images/blog/2025/april/the-blog-went-down-oh-no/custom-records.png" alt="Squarespace Custom Records" width="600"&gt;
+  &lt;figcaption style="text-align:center;"&gt;Squarespace Custom Records&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;In Squarespace, I created an A record with the hostname (data field) set as &lt;code&gt;@&lt;/code&gt;, shorthand for the domain &lt;code&gt;aadith-thiruvallarai.com&lt;/code&gt;, pointing to my VM’s public IP address.&lt;/p&gt;
+&lt;h3&gt;the final choices&lt;/h3&gt;
+&lt;p&gt;So, here’s the new and improved stack:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Cloud Infrastructure: GCP&lt;/li&gt;
+&lt;li&gt;Operating System: Ubuntu&lt;/li&gt;
+&lt;li&gt;Web Server: nginx&lt;/li&gt;
+&lt;li&gt;Content type: some good ol’ HTML/CSS&lt;sup id="fnref:basic website"&gt;&lt;a class="footnote-ref" href="#fn:basic website"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;updates&lt;/h2&gt;
+&lt;h3&gt;April 15th, 2025&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Accidentally published the blog post early because I wanted to test the DNS settings with a new blog post&lt;/li&gt;
+&lt;li&gt;Completed the blog post&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="footnote"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn:weekly users"&gt;
+&lt;p&gt;Yeah, I'm proud to admit that I have at least one weekly visitor! 
+On a more serious note, I didn't figure out how to track how many people were visiting the site. My numbers are solely based on the friends I shared the website with... yeah that's right I have one friend, at least!&amp;#160;&lt;a class="footnote-backref" href="#fnref:weekly users" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:basic website"&gt;
+&lt;p&gt;I’m sorry for not using the new React framework of the day &lt;code&gt;:(&lt;/code&gt; … 
+I’m not actually sorry &lt;code&gt;:p&lt;/code&gt;. 
+I just wanted to keep it simple, stupid, and short!
+If you’re reading this a second time… I still stand by what I said &lt;code&gt;:p&lt;/code&gt;&amp;#160;&lt;a class="footnote-backref" href="#fnref:basic website" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;a class="footnote-backref" href="#fnref2:basic website" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:cloud meme"&gt;
+&lt;p&gt;I’m envisioning the &lt;strong&gt;&lt;em&gt;&lt;a href="https://knowyourmeme.com/memes/old-man-yells-at-cloud" target="”_blank”"&gt;“Old Man Yells at Cloud”&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt; meme.&amp;#160;&lt;a class="footnote-backref" href="#fnref:cloud meme" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:storage overkill"&gt;
+&lt;p&gt;For what I need this VM to do, this amount of storage is definitely overkill.&amp;#160;&lt;a class="footnote-backref" href="#fnref:storage overkill" title="Jump back to footnote 4 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:future project"&gt;
+&lt;p&gt;Maybe I should make an HTTP web server in C, C++, or Rust? 
+I don’t know, shoot me an email if you’d like to see me do this and blog about it!&amp;#160;&lt;a class="footnote-backref" href="#fnref:future project" title="Jump back to footnote 5 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="sisyphean didactic auto-flagellator"></category><category term="meta"></category></entry><entry><title>why start a blog?</title><link href="https://aadith-thiruvallarai.com/why-start-a-blog.html" rel="alternate"></link><published>2025-03-20T00:00:00-05:00</published><updated>2025-04-15T00:00:00-05:00</updated><author><name>aadith thiruvallarai</name></author><id>tag:aadith-thiruvallarai.com,2025-03-20:/why-start-a-blog.html</id><summary type="html">&lt;p&gt;Creating a blog has been an interest of mine for the past 10 years. 
+I was introduced to Blogger, a popular blogging website in the 2000s, through a random middle school English elective class. 
+The blogging&lt;sup id="fnref:lost Blogger account"&gt;&lt;a class="footnote-ref" href="#fn:lost Blogger account"&gt;1&lt;/a&gt;&lt;/sup&gt; in question consisted of answering writing prompts with blog posts. 
+I thoroughly enjoyed …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Creating a blog has been an interest of mine for the past 10 years. 
+I was introduced to Blogger, a popular blogging website in the 2000s, through a random middle school English elective class. 
+The blogging&lt;sup id="fnref:lost Blogger account"&gt;&lt;a class="footnote-ref" href="#fn:lost Blogger account"&gt;1&lt;/a&gt;&lt;/sup&gt; in question consisted of answering writing prompts with blog posts. 
+I thoroughly enjoyed the process of brainstorming, drafting, writing, and editing&lt;sup id="fnref:writing process"&gt;&lt;a class="footnote-ref" href="#fn:writing process"&gt;2&lt;/a&gt;&lt;/sup&gt;. 
+At the same time, I didn’t have the freedom to take my time on each blog post because it was an assignment. 
+I couldn’t fully appreciate it for what it was because it was “just for a grade” and my initial exposure to blogging. 
+So, after this brief stint, I hung up my “blogging boots”.&lt;/p&gt;
+&lt;p&gt;Throughout the rest of my secondary schooling, my writing was purely assignment based. 
+I had forgotten my time in “Bloggerland “ and began to get annoyed with how writing was simply a means to an end&lt;sup id="fnref:philosophy"&gt;&lt;a class="footnote-ref" href="#fn:philosophy"&gt;3&lt;/a&gt;&lt;/sup&gt;. 
+I had to write to do well in school, and before I could think about how I felt about what I had written, the next assignment would come along. 
+I couldn’t take the time to dissect what I had written, let alone figure out how I could have written with a better depth of analysis. &lt;/p&gt;
+&lt;p&gt;Even through college, these friction points continued to bug me. 
+My free time had completely evaporated. I couldn’t find the time to revisit blogging, let alone figure out what to write about or if I could even consider myself an &lt;em&gt;expert&lt;/em&gt; able to write informatively on a topic. 
+So blogging remained on hold.&lt;/p&gt;
+&lt;p&gt;In the last two years, I began to stumble upon blogs discussing topics such as programming language design, system design, computability theory, number theory, effective writing, African philosophy, gender theory… I could write a whole blog post on what I was reading and have been continuing to read. This began to push me to see the reality of writing blog posts and more importantly… how it could be about &lt;em&gt;anything&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;I graduated from college a year ago with my bachelor's degree in computer science and a minor in philosophy&lt;sup id="fnref:bragging"&gt;&lt;a class="footnote-ref" href="#fn:bragging"&gt;4&lt;/a&gt;&lt;/sup&gt;, and have been working a corporate job for the past six months. In the early throes of decades-long corporate churning and burnout, I began thinking of ways to make something out of my free time that was totally mine and truly &lt;em&gt;fun&lt;/em&gt;. This led me back to my memories of using Blogger, my desire to write, and the incredibly informative blogs I had stumbled upon. By now, I had made up my mind, I had to write a blog!&lt;/p&gt;
+&lt;p&gt;I could have simply used Wix or WordPress, but I wanted to create this website from scratch&lt;sup id="fnref:blog purpose"&gt;&lt;a class="footnote-ref" href="#fn:blog purpose"&gt;5&lt;/a&gt;&lt;/sup&gt;. I'm not a great front-end[^footnote6] developer, so I chose to use Pelican, a static site generator made in Python.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A front-end developer works on what the user sees and interacts with. 
+More specifically, the HTML, CSS, and JavaScript files related to the web application.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This drastically reduced the potential man-hours it would have taken to write up the HTML and CSS from scratch. However, I no longer have bragging rights to being a &lt;em&gt;fully&lt;/em&gt; full-stack developer.&lt;/p&gt;
+&lt;p&gt;I could use a cloud platform to host the website, but I wouldn’t get the fun of creating a website from scratch. I had messed around with a Raspberry Pi a few years ago and had found blogs about how you could host a website from one. So, I thought “That can’t be too hard to do if someone else has done it!” I bought a Raspberry Pi, booted it up with Raspberry Pi OS, a flavor of Debian which is a flavor of Linux&lt;sup id="fnref:missing link"&gt;&lt;a class="footnote-ref" href="#fn:missing link"&gt;6&lt;/a&gt;&lt;/sup&gt;, and then installed an open-source HTTP web server called nginx. After some quick configuration, my website was up and running.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I left out a lot of the work involved in getting this website up and running. 
+Dynamic DNS (DDNS) was really difficult to figure out, and I’m embarrassed to say that I resorted to Claude AI to help me with some of the steps… 
+But with Claude’s help, I was able to get an SSL certificate for free and make my website use the HTTPS protocol! 
+I may write a future blog post about this if there’s enough interest.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;what's in a name?&lt;/h2&gt;
+&lt;p&gt;So why is it called "sisyphean didactic auto-flagellator"? As I went through college, I found myself enraptured by the numerous subfields of mathematics and computer science classes I could take: algorithms, data structures, quantum algorithms, machine learning, computability theory, linear algebra&lt;sup id="fnref:lin alg"&gt;&lt;a class="footnote-ref" href="#fn:lin alg"&gt;7&lt;/a&gt;&lt;/sup&gt;, calculus, topology... Honestly, the list just goes on and on.
+I began to realize that I had this infectious passion for learning that I just can't get rid of even if it were to drive me mad, or even to death&lt;sup id="fnref:curious cat"&gt;&lt;a class="footnote-ref" href="#fn:curious cat"&gt;8&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;I searched up a phrase for a person who likes to torture themselves by 
+learning and I found something quite close: 
+&lt;strong&gt;sisyphean didactic auto-flagellator&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Funnily enough, I actually found the phrase “sisyphean didactic auto-flagellator” from an &lt;strong&gt;&lt;em&gt;&lt;a href="https://english.stackexchange.com/questions/64541/word-for-a-person-who-likes-to-torture-himself-by-learning-something-difficult/" target="_blank"&gt;English Stack Exchange Question&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;updates&lt;/h2&gt;
+&lt;h3&gt;April 15th, 2025&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Made this blog post consistent with other blog posts’ structuring&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="footnote"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn:lost Blogger account"&gt;
+&lt;p&gt;Unfortunately, I made the Blogger through my school account which got deleted as soon as I graduated from high school &lt;code&gt;:(&lt;/code&gt;.
+I would have loved to read through some of my posts and even share some with y’all!&amp;#160;&lt;a class="footnote-backref" href="#fnref:lost Blogger account" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:writing process"&gt;
+&lt;p&gt;and then writing some more… editing some more… writing some more… 
+I think you get the point.&amp;#160;&lt;a class="footnote-backref" href="#fnref:writing process" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:philosophy"&gt;
+&lt;p&gt;Wow, Kant much?&amp;#160;&lt;a class="footnote-backref" href="#fnref:philosophy" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:bragging"&gt;
+&lt;p&gt;“Wow how cool and cultured you are, Aadith!” is what you definitely thought reading that.&amp;#160;&lt;a class="footnote-backref" href="#fnref:bragging" title="Jump back to footnote 4 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:blog purpose"&gt;
+&lt;p&gt;An allusion to this blog’s name…&amp;#160;&lt;a class="footnote-backref" href="#fnref:blog purpose" title="Jump back to footnote 5 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:missing link"&gt;
+&lt;p&gt;… which is based on Unix… which I’m sure is based on something else.&amp;#160;&lt;a class="footnote-backref" href="#fnref:missing link" title="Jump back to footnote 6 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:lin alg"&gt;
+&lt;p&gt;I'm currently attempting to read through the &lt;em&gt;Linear Algebra, 4th Ed.&lt;/em&gt; by Sheldon Axler and work out all of the exercises, wish me luck!&amp;#160;&lt;a class="footnote-backref" href="#fnref:lin alg" title="Jump back to footnote 7 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:curious cat"&gt;
+&lt;p&gt;I should have named this blog "curious cat". 
+Maybe, I'll do a rebranding in the future. 
+For now, we have this long name!&amp;#160;&lt;a class="footnote-backref" href="#fnref:curious cat" title="Jump back to footnote 8 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="sisyphean didactic auto-flagellator"></category><category term="meta"></category></entry></feed>
