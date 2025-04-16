@@ -6,28 +6,50 @@ Tags: meta
 Slug: the-blog-went-down-oh-no
 Author: aadith thiruvallarai
 
-If you're my weekly visitor[^weekly users], you may have noticed the website went down… 
-It seems that when you host a website using 
+If you're my weekly visitor[^weekly users], you may have noticed the website went down for a few weeks… 
+When hosting a website using 
 ***[DDNS](https://en.wikipedia.org/wiki/Dynamic_DNS){:target="_blank"}*** (dynamic ***[DNS](https://en.wikipedia.org/wiki/Domain_Name_System){:target=”_blank”}***) on your home WiFi, your ISP (internet service provider) may not be a huge fan.
 
-> 
+<hr style = “height:100px;color:cornflowerblue;”>
+<hr style = “height:100px;color:cornflowerblue;”>
+
+### an aside on DNS[^big block quotes]: 
 Accessing a website is tantamount to accessing files hosted by or on a computer, often called a server, through the Internet.
 The way our computer, often called the client, can talk to the server is through the use of an IP (Internet Protocol) address, the Internet version of a mailing address.
-It would be a pain if you had to remember the IP address for every website you want to use on a daily basis.
-Thankfully, we don’t have to memorize every website’s IP address because of DNS (domain name system).
-DNS allows you to use a human-friendly domain name, or URL, instead of the computer's IP address.
-Then, DNS servers will help find the IP address related to the website you’re seeking and provide it to your computer.
+However, it would be a pain if you had to remember every website’s IP address you want to use on a daily basis. 
 
-Previously, when I had my website’s related files on my ***[Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi){:target=”_blank”}***, I used DDNS with the help of a company ***[No-IP](https://en.wikipedia.org/wiki/No-IP){:target=”_blank”}***​​.
-No-IP’s DDNS application would run every five to ten minutes on my Raspberry Pi telling No-IP’s servers if my external IP address had changed.
-If it did change, they would make sure to publish new DNS records saying what IP address my website should point towards.
+The solution comes in the form of ***[DNS (Domain Name System)](https://en.wikipedia.org/wiki/Domain_Name_System){:target=”_blank”}***.
+DNS allows you to use a human-friendly domain name, or URL, instead of the computer's IP address.
+DNS servers store DNS records which include the associated IP addresses for domains.
 
 > 
+“DNS records are sets of instructions that live on DNS servers. 
+These instructions are vital to the success of a DNS lookup.” 
+- Cloudflare
+
+Web browsers communicate with DNS servers, through what is called a DNS lookup, whenever you look up a URL to find the website’s associated IP address.
+
+<hr style = “height:100px;color:cornflowerblue;”>
+<hr style = “height:100px;color:cornflowerblue;”>
+
+Previously, when I had my website’s related files on my ***[Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi){:target=”_blank”}***, I used DDNS through the company ***[No-IP](https://en.wikipedia.org/wiki/No-IP){:target=”_blank”}***​​. 
+No-IP provides domains, free of charge, and a DDNS application for the machine hosting the website’s server.
+I configured No-IP’s DDNS application to run every five to ten minutes on the Raspberry Pi  to communicate changes in my public IP address to No-IP’s DNS servers.
+If it did change, they would make sure to publish new DNS records saying what IP address my website should point towards.
+
+<hr style = “height:100px;color:cornflowerblue;”>
+<hr style = “height:100px;color:cornflowerblue;”>
+
+### an aside on DDNS:
 Every computer in a home network talks to the internet using the home router. 
 The home router has an external, or public-facing, IP address used to access the Internet. 
 This IP address can be changed by an ISP without warning. 
 In order to utilize DNS, it’s important to know what your IP address is at all times and rely on the fact that it will not change over time. 
 This is where DDNS comes into play.
+DDNS allows for a changing public IP address (that’s why it’s called dynamic DNS).
+
+<hr style = “height:100px;color:cornflowerblue;”>
+<hr style = “height:100px;color:cornflowerblue;”>
 
 I noticed that the WiFi would intermittently go down on a daily basis – of course there couldn’t possibly be a reason for this…
 
@@ -86,7 +108,7 @@ Besides that, I wanted to familiarize myself with a Linux flavor I hadn’t used
 
 On the flip side, working in the cloud gives me flexibility on what OS I can choose to use. 
 I’m pretty familiar with using ***[Ubuntu](https://en.wikipedia.org/wiki/Ubuntu){:target=”_blank”}***, a Linux distribution, from messing around with VMs on my personal machine and class assignments during my undergrad.
-I wanted to quickly get the website back and running, so I just went with what I was most familiar with!
+I wanted to get the website up and running again, so I just went with what I was most familiar with!
 
 ### the web restaurant
 
@@ -123,11 +145,6 @@ You can only lease it from companies like GoDaddy and Squarespace.
 
 Configuring DNS involves creating and publishing what is known as DNS records.
 
-> 
-“DNS records are sets of instructions that live on DNS servers. 
-These instructions are vital to the success of a DNS lookup.” 
-- Cloudflare
-
 DNS records come in many flavors but the only one I had to be concerned with was an A record.
 An A record points the URL to the website’s server’s IP address.
 
@@ -149,6 +166,10 @@ So, here’s the new and improved stack:
 
 ## updates
 
+### April 16th, 2025
+- Changed some verbiage for clarity
+- Made long block quotes into “asides”
+
 ### April 15th, 2025
 
 - Accidentally published the blog post early because I wanted to test the DNS settings with a new blog post
@@ -157,6 +178,9 @@ So, here’s the new and improved stack:
 [^weekly users]: 
 Yeah, I'm proud to admit that I have at least one weekly visitor! 
 On a more serious note, I didn't figure out how to track how many people were visiting the site. My numbers are solely based on the friends I shared the website with... yeah that's right I have one friend, at least!
+
+[^big block quotes]: 
+I felt like some of my block quotes were getting too big. I hope you like this style of inserting “asides” when some critical, yet verbose, information needs to be communicated.
 
 [^basic website]: 
 I’m sorry for not using the new React framework of the day `:(` … 

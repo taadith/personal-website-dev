@@ -64,7 +64,7 @@
                     <time datetime="2025-04-15 00:00:00-05:00">Modified
                         on Apr 15, 2025</time>
                 </li>
-                <li>7 min read</li>
+                <li>8 min read</li>
                 <li>
                     Categories:
                     <a href="/category/sisyphean-didactic-auto-flagellator.html"><em>sisyphean didactic auto-flagellator</em></a>
@@ -75,27 +75,45 @@
                 </li>
             </ul>
         </aside>
-        <p>If you're my weekly visitor<sup id="fnref:weekly users"><a class="footnote-ref" href="#fn:weekly users">1</a></sup>, you may have noticed the website went down… 
-It seems that when you host a website using 
+        <p>If you're my weekly visitor<sup id="fnref:weekly users"><a class="footnote-ref" href="#fn:weekly users">1</a></sup>, you may have noticed the website went down for a few weeks… 
+When hosting a website using 
 <strong><em><a href="https://en.wikipedia.org/wiki/Dynamic_DNS" target="_blank">DDNS</a></em></strong> (dynamic <strong><em><a href="https://en.wikipedia.org/wiki/Domain_Name_System" target="”_blank”">DNS</a></em></strong>) on your home WiFi, your ISP (internet service provider) may not be a huge fan.</p>
-<blockquote>
+<hr style = “height:100px;color:cornflowerblue;”>
+<hr style = “height:100px;color:cornflowerblue;”>
+
+<h3>an aside on DNS<sup id="fnref:big block quotes"><a class="footnote-ref" href="#fn:big block quotes">2</a></sup>:</h3>
 <p>Accessing a website is tantamount to accessing files hosted by or on a computer, often called a server, through the Internet.
 The way our computer, often called the client, can talk to the server is through the use of an IP (Internet Protocol) address, the Internet version of a mailing address.
-It would be a pain if you had to remember the IP address for every website you want to use on a daily basis.
-Thankfully, we don’t have to memorize every website’s IP address because of DNS (domain name system).
+However, it would be a pain if you had to remember every website’s IP address you want to use on a daily basis. </p>
+<p>The solution comes in the form of <strong><em><a href="https://en.wikipedia.org/wiki/Domain_Name_System" target="”_blank”">DNS (Domain Name System)</a></em></strong>.
 DNS allows you to use a human-friendly domain name, or URL, instead of the computer's IP address.
-Then, DNS servers will help find the IP address related to the website you’re seeking and provide it to your computer.</p>
-</blockquote>
-<p>Previously, when I had my website’s related files on my <strong><em><a href="https://en.wikipedia.org/wiki/Raspberry_Pi" target="”_blank”">Raspberry Pi</a></em></strong>, I used DDNS with the help of a company <strong><em><a href="https://en.wikipedia.org/wiki/No-IP" target="”_blank”">No-IP</a></em></strong>​​.
-No-IP’s DDNS application would run every five to ten minutes on my Raspberry Pi telling No-IP’s servers if my external IP address had changed.
-If it did change, they would make sure to publish new DNS records saying what IP address my website should point towards.</p>
+DNS servers store DNS records which include the associated IP addresses for domains.</p>
 <blockquote>
+<p>“DNS records are sets of instructions that live on DNS servers. 
+These instructions are vital to the success of a DNS lookup.” 
+- Cloudflare</p>
+</blockquote>
+<p>Web browsers communicate with DNS servers, through what is called a DNS lookup, whenever you look up a URL to find the website’s associated IP address.</p>
+<hr style = “height:100px;color:cornflowerblue;”>
+<hr style = “height:100px;color:cornflowerblue;”>
+
+<p>Previously, when I had my website’s related files on my <strong><em><a href="https://en.wikipedia.org/wiki/Raspberry_Pi" target="”_blank”">Raspberry Pi</a></em></strong>, I used DDNS through the company <strong><em><a href="https://en.wikipedia.org/wiki/No-IP" target="”_blank”">No-IP</a></em></strong>​​. 
+No-IP provides domains, free of charge, and a DDNS application for the machine hosting the website’s server.
+I configured No-IP’s DDNS application to run every five to ten minutes on the Raspberry Pi  to communicate changes in my public IP address to No-IP’s DNS servers.
+If it did change, they would make sure to publish new DNS records saying what IP address my website should point towards.</p>
+<hr style = “height:100px;color:cornflowerblue;”>
+<hr style = “height:100px;color:cornflowerblue;”>
+
+<h3>an aside on DDNS:</h3>
 <p>Every computer in a home network talks to the internet using the home router. 
 The home router has an external, or public-facing, IP address used to access the Internet. 
 This IP address can be changed by an ISP without warning. 
 In order to utilize DNS, it’s important to know what your IP address is at all times and rely on the fact that it will not change over time. 
-This is where DDNS comes into play.</p>
-</blockquote>
+This is where DDNS comes into play.
+DDNS allows for a changing public IP address (that’s why it’s called dynamic DNS).</p>
+<hr style = “height:100px;color:cornflowerblue;”>
+<hr style = “height:100px;color:cornflowerblue;”>
+
 <p>I noticed that the WiFi would intermittently go down on a daily basis – of course there couldn’t possibly be a reason for this…</p>
 <p>My best conclusion is that my ISP didn't like the fact that I was hosting a website on the network with many visitors (at least one a week). 
 Alternatively, the issue could be with No-IP’s application having periodic traffic to confirm my home router's external IP address. 
@@ -109,13 +127,13 @@ Otherwise, it could have been a malicious actor or a bot was actually scanning m
 <li>“On-premise” hardware: Raspberry Pi</li>
 <li>Operating System: <strong><em><a href="https://en.wikipedia.org/wiki/Raspberry_Pi_OS" target="”_blank”">Raspberry Pi OS</a></em></strong>, based on <strong><em><a href="https://en.wikipedia.org/wiki/Debian" target="”_blank”">Debian</a></em></strong> (a <strong><em><a href="https://en.wikipedia.org/wiki/Linux" target="”_blank”">Linux</a></em></strong> distribution)</li>
 <li><a href="https://en.wikipedia.org/wiki/Web_server" target="”_blank”">Web Server</a>: <strong><em><a href="https://nginx.org/en/" target="”_blank”">nginx</a></em></strong></li>
-<li>Content Type: some good ol’ HTML and CSS<sup id="fnref2:basic website"><a class="footnote-ref" href="#fn:basic website">2</a></sup></li>
+<li>Content Type: some good ol’ HTML and CSS<sup id="fnref2:basic website"><a class="footnote-ref" href="#fn:basic website">3</a></sup></li>
 </ol>
 <blockquote>
 <p>A web server distributes web content that has been requested.</p>
 </blockquote>
 <h3>to <strong><em><a href="https://en.wikipedia.org/wiki/Cloud_computing" target="”_blank”">cloud</a></em></strong> or to self-host, that is the question</h3>
-<p>After much deliberation and moral indignation at the choices that led me here, I unwillingly chose to switch to using the cloud<sup id="fnref:cloud meme"><a class="footnote-ref" href="#fn:cloud meme">3</a></sup>. 
+<p>After much deliberation and moral indignation at the choices that led me here, I unwillingly chose to switch to using the cloud<sup id="fnref:cloud meme"><a class="footnote-ref" href="#fn:cloud meme">4</a></sup>. 
 Instead of being cool and hosting a website on a Raspberry Pi – really cool to me if you were asking – I'm now hosting the website on <strong><em><a href="https://en.wikipedia.org/wiki/Google_Cloud_Platform" target="”_blank”">GCP</a></em></strong> (the Google Cloud Platform). 
 I was really proud of myself for getting hardware I could touch and feel to host a website readily accessible from the Internet. 
 But, in order to prevent the ISP attack messages and WiFi issues, I had no choice but to host the website remotely. 
@@ -134,7 +152,7 @@ A VM, much like a hardware-defined machine, has a CPU, RAM, storage, and can eve
 <p>In the GCP console, I created a project to hold all of my resources related to running this website, attached a billing account (gave my credit card info yippee), specified my hardware/network requirements for the VM, and then created it with a simple tap of a button. </p>
 <blockquote>
 <p>The VM, itself, is an "e2 standard" instance which means it uses <strong><em><a href="https://en.wikipedia.org/wiki/Broadwell_(microarchitecture)" target="”_blank”">Intel Core Broadwell processors</a></em></strong>. 
-The VM’s hardware specs include two <strong><em><a href="https://www.techtarget.com/whatis/definition/virtual-CPU-vCPU" target="”_blank”">vCPUs</a></em></strong> ( virtual CPUs), 16 GB of RAM, and 128<sup id="fnref:storage overkill"><a class="footnote-ref" href="#fn:storage overkill">4</a></sup> GB of storage.</p>
+The VM’s hardware specs include two <strong><em><a href="https://www.techtarget.com/whatis/definition/virtual-CPU-vCPU" target="”_blank”">vCPUs</a></em></strong> ( virtual CPUs), 16 GB of RAM, and 128<sup id="fnref:storage overkill"><a class="footnote-ref" href="#fn:storage overkill">5</a></sup> GB of storage.</p>
 </blockquote>
 <h3>the OS</h3>
 <p>The old tech stack used RPO, Raspberry Pi OS. 
@@ -142,7 +160,7 @@ RPO, if you couldn’t tell from the name, was made for the Raspberry Pi because
 Besides that, I wanted to familiarize myself with a Linux flavor I hadn’t used before.</p>
 <p>On the flip side, working in the cloud gives me flexibility on what OS I can choose to use. 
 I’m pretty familiar with using <strong><em><a href="https://en.wikipedia.org/wiki/Ubuntu" target="”_blank”">Ubuntu</a></em></strong>, a Linux distribution, from messing around with VMs on my personal machine and class assignments during my undergrad.
-I wanted to quickly get the website back and running, so I just went with what I was most familiar with!</p>
+I wanted to get the website up and running again, so I just went with what I was most familiar with!</p>
 <h3>the web restaurant</h3>
 <p>I chose nginx as my web server because it is known to outperform other popular web server implementations in benchmark tests, especially when it comes to serving static content.</p>
 <blockquote>
@@ -150,7 +168,7 @@ I wanted to quickly get the website back and running, so I just went with what I
 The web browser then converts the content to the web page for you to view. 
 In contrast, dynamic content is generated by a web application which is then processed by the web browser.</p>
 </blockquote>
-<p>nginx is an incredibly useful tool that removes the need to create an <a href="https://en.wikipedia.org/wiki/HTTP" target="”_blank”">HTTP (Hypertext Transfer Protocol)</a> web server from scratch<sup id="fnref:future project"><a class="footnote-ref" href="#fn:future project">5</a></sup>. </p>
+<p>nginx is an incredibly useful tool that removes the need to create an <a href="https://en.wikipedia.org/wiki/HTTP" target="”_blank”">HTTP (Hypertext Transfer Protocol)</a> web server from scratch<sup id="fnref:future project"><a class="footnote-ref" href="#fn:future project">6</a></sup>. </p>
 <blockquote>
 <p>HTTP is the protocol, specification/method, by which information is communicated over the World Wide Web.</p>
 </blockquote>
@@ -170,11 +188,6 @@ Then, I obtained a lease to the domain <code>aadith-thiruvallarai.com</code> fro
 You can only lease it from companies like GoDaddy and Squarespace.</p>
 </blockquote>
 <p>Configuring DNS involves creating and publishing what is known as DNS records.</p>
-<blockquote>
-<p>“DNS records are sets of instructions that live on DNS servers. 
-These instructions are vital to the success of a DNS lookup.” 
-- Cloudflare</p>
-</blockquote>
 <p>DNS records come in many flavors but the only one I had to be concerned with was an A record.
 An A record points the URL to the website’s server’s IP address.</p>
 <figure>
@@ -189,9 +202,14 @@ An A record points the URL to the website’s server’s IP address.</p>
 <li>Cloud Infrastructure: GCP</li>
 <li>Operating System: Ubuntu</li>
 <li>Web Server: nginx</li>
-<li>Content type: some good ol’ HTML/CSS<sup id="fnref:basic website"><a class="footnote-ref" href="#fn:basic website">2</a></sup></li>
+<li>Content type: some good ol’ HTML/CSS<sup id="fnref:basic website"><a class="footnote-ref" href="#fn:basic website">3</a></sup></li>
 </ol>
 <h2>updates</h2>
+<h3>April 16th, 2025</h3>
+<ul>
+<li>Changed some verbiage for clarity</li>
+<li>Made long block quotes into “asides”</li>
+</ul>
 <h3>April 15th, 2025</h3>
 <ul>
 <li>Accidentally published the blog post early because I wanted to test the DNS settings with a new blog post</li>
@@ -204,21 +222,24 @@ An A record points the URL to the website’s server’s IP address.</p>
 <p>Yeah, I'm proud to admit that I have at least one weekly visitor! 
 On a more serious note, I didn't figure out how to track how many people were visiting the site. My numbers are solely based on the friends I shared the website with... yeah that's right I have one friend, at least!&#160;<a class="footnote-backref" href="#fnref:weekly users" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
+<li id="fn:big block quotes">
+<p>I felt like some of my block quotes were getting too big. I hope you like this style of inserting “asides” when some critical, yet verbose, information needs to be communicated.&#160;<a class="footnote-backref" href="#fnref:big block quotes" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
 <li id="fn:basic website">
 <p>I’m sorry for not using the new React framework of the day <code>:(</code> … 
 I’m not actually sorry <code>:p</code>. 
 I just wanted to keep it simple, stupid, and short!
-If you’re reading this a second time… I still stand by what I said <code>:p</code>&#160;<a class="footnote-backref" href="#fnref:basic website" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:basic website" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+If you’re reading this a second time… I still stand by what I said <code>:p</code>&#160;<a class="footnote-backref" href="#fnref:basic website" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:basic website" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:cloud meme">
-<p>I’m envisioning the <strong><em><a href="https://knowyourmeme.com/memes/old-man-yells-at-cloud" target="”_blank”">“Old Man Yells at Cloud”</a></em></strong> meme.&#160;<a class="footnote-backref" href="#fnref:cloud meme" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>I’m envisioning the <strong><em><a href="https://knowyourmeme.com/memes/old-man-yells-at-cloud" target="”_blank”">“Old Man Yells at Cloud”</a></em></strong> meme.&#160;<a class="footnote-backref" href="#fnref:cloud meme" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:storage overkill">
-<p>For what I need this VM to do, this amount of storage is definitely overkill.&#160;<a class="footnote-backref" href="#fnref:storage overkill" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>For what I need this VM to do, this amount of storage is definitely overkill.&#160;<a class="footnote-backref" href="#fnref:storage overkill" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn:future project">
 <p>Maybe I should make an HTTP web server in C, C++, or Rust? 
-I don’t know, shoot me an email if you’d like to see me do this and blog about it!&#160;<a class="footnote-backref" href="#fnref:future project" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+I don’t know, shoot me an email if you’d like to see me do this and blog about it!&#160;<a class="footnote-backref" href="#fnref:future project" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
