@@ -1,6 +1,6 @@
 Title: the blog went down... oh no!
 Date: 2025-04-08
-Modified: 2025-04-15
+Modified: 2025-04-16
 Category: sisyphean didactic auto-flagellator
 Tags: meta
 Slug: the-blog-went-down-oh-no
