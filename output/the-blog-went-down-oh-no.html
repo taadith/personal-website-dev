@@ -61,8 +61,8 @@
                     <time datetime="2025-04-08 00:00:00-05:00">Apr 08, 2025</time>
                 </li>
                 <li>
-                    <time datetime="2025-04-16 00:00:00-05:00">Modified
-                        on Apr 16, 2025</time>
+                    <time datetime="2025-04-17 00:00:00-05:00">Modified
+                        on Apr 17, 2025</time>
                 </li>
                 <li>8 min read</li>
                 <li>
@@ -78,32 +78,22 @@
         <p>If you're my weekly visitor<sup id="fnref:weekly users"><a class="footnote-ref" href="#fn:weekly users">1</a></sup>, you may have noticed the website went down for a few weeks… 
 When hosting a website using 
 <strong><em><a href="https://en.wikipedia.org/wiki/Dynamic_DNS" target="_blank">DDNS</a></em></strong> (dynamic <strong><em><a href="https://en.wikipedia.org/wiki/Domain_Name_System" target="”_blank”">DNS</a></em></strong>) on your home WiFi, your ISP (internet service provider) may not be a huge fan.</p>
-<hr style = “height:100px;color:cornflowerblue;”>
-<hr style = “height:100px;color:cornflowerblue;”>
-
+<blockquote>
 <h3>an aside on DNS<sup id="fnref:big block quotes"><a class="footnote-ref" href="#fn:big block quotes">2</a></sup>:</h3>
 <p>Accessing a website is tantamount to accessing files hosted by or on a computer, often called a server, through the Internet.
 The way our computer, often called the client, can talk to the server is through the use of an IP (Internet Protocol) address, the Internet version of a mailing address.
 However, it would be a pain if you had to remember every website’s IP address you want to use on a daily basis. </p>
 <p>The solution comes in the form of <strong><em><a href="https://en.wikipedia.org/wiki/Domain_Name_System" target="”_blank”">DNS (Domain Name System)</a></em></strong>.
 DNS allows you to use a human-friendly domain name, or URL, instead of the computer's IP address.
-DNS servers store DNS records which include the associated IP addresses for domains.</p>
-<blockquote>
-<p>“DNS records are sets of instructions that live on DNS servers. 
-These instructions are vital to the success of a DNS lookup.” 
-- Cloudflare</p>
+DNS servers store DNS records which include the associated IP addresses for domains.
+DNS records are sets of instructions vital to the success of a DNS lookup.
+Web browsers communicate with DNS servers, through what is called a DNS lookup, whenever you look up a URL to find the website’s associated IP address.</p>
 </blockquote>
-<p>Web browsers communicate with DNS servers, through what is called a DNS lookup, whenever you look up a URL to find the website’s associated IP address.</p>
-<hr style = “height:100px;color:cornflowerblue;”>
-<hr style = “height:100px;color:cornflowerblue;”>
-
 <p>Previously, when I had my website’s related files on my <strong><em><a href="https://en.wikipedia.org/wiki/Raspberry_Pi" target="”_blank”">Raspberry Pi</a></em></strong>, I used DDNS through the company <strong><em><a href="https://en.wikipedia.org/wiki/No-IP" target="”_blank”">No-IP</a></em></strong>​​. 
 No-IP provides domains, free of charge, and a DDNS application for the machine hosting the website’s server.
 I configured No-IP’s DDNS application to run every five to ten minutes on the Raspberry Pi  to communicate changes in my public IP address to No-IP’s DNS servers.
 If it did change, they would make sure to publish new DNS records saying what IP address my website should point towards.</p>
-<hr style = “height:100px;color:cornflowerblue;”>
-<hr style = “height:100px;color:cornflowerblue;”>
-
+<blockquote>
 <h3>an aside on DDNS:</h3>
 <p>Every computer in a home network talks to the internet using the home router. 
 The home router has an external, or public-facing, IP address used to access the Internet. 
@@ -111,9 +101,7 @@ This IP address can be changed by an ISP without warning.
 In order to utilize DNS, it’s important to know what your IP address is at all times and rely on the fact that it will not change over time. 
 This is where DDNS comes into play.
 DDNS allows for a changing public IP address (that’s why it’s called dynamic DNS).</p>
-<hr style = “height:100px;color:cornflowerblue;”>
-<hr style = “height:100px;color:cornflowerblue;”>
-
+</blockquote>
 <p>I noticed that the WiFi would intermittently go down on a daily basis – of course there couldn’t possibly be a reason for this…</p>
 <p>My best conclusion is that my ISP didn't like the fact that I was hosting a website on the network with many visitors (at least one a week). 
 Alternatively, the issue could be with No-IP’s application having periodic traffic to confirm my home router's external IP address. 
@@ -130,7 +118,7 @@ Otherwise, it could have been a malicious actor or a bot was actually scanning m
 <li>Content Type: some good ol’ HTML and CSS<sup id="fnref2:basic website"><a class="footnote-ref" href="#fn:basic website">3</a></sup></li>
 </ol>
 <blockquote>
-<p>A web server distributes web content that has been requested.</p>
+<p>A web server distributes web content requested by a client..</p>
 </blockquote>
 <h3>to <strong><em><a href="https://en.wikipedia.org/wiki/Cloud_computing" target="”_blank”">cloud</a></em></strong> or to self-host, that is the question</h3>
 <p>After much deliberation and moral indignation at the choices that led me here, I unwillingly chose to switch to using the cloud<sup id="fnref:cloud meme"><a class="footnote-ref" href="#fn:cloud meme">4</a></sup>. 
@@ -205,6 +193,11 @@ An A record points the URL to the website’s server’s IP address.</p>
 <li>Content type: some good ol’ HTML/CSS<sup id="fnref:basic website"><a class="footnote-ref" href="#fn:basic website">3</a></sup></li>
 </ol>
 <h2>updates</h2>
+<h3>April 17th, 2025</h3>
+<ul>
+<li>Changed some verbiage for clarity</li>
+<li>Made horizontally ruled “asides” back into long block quotes w/ some revisions</li>
+</ul>
 <h3>April 16th, 2025</h3>
 <ul>
 <li>Changed some verbiage for clarity</li>

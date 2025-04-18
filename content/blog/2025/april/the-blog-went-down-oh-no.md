@@ -1,6 +1,6 @@
 Title: the blog went down... oh no!
 Date: 2025-04-08
-Modified: 2025-04-16
+Modified: 2025-04-17
 Category: sisyphean didactic auto-flagellator
 Tags: meta
 Slug: the-blog-went-down-oh-no
@@ -10,46 +10,31 @@ If you're my weekly visitor[^weekly users], you may have noticed the website wen
 When hosting a website using 
 ***[DDNS](https://en.wikipedia.org/wiki/Dynamic_DNS){:target="_blank"}*** (dynamic ***[DNS](https://en.wikipedia.org/wiki/Domain_Name_System){:target=”_blank”}***) on your home WiFi, your ISP (internet service provider) may not be a huge fan.
 
-<hr style = “height:100px;color:cornflowerblue;”>
-<hr style = “height:100px;color:cornflowerblue;”>
-
-### an aside on DNS[^big block quotes]: 
-Accessing a website is tantamount to accessing files hosted by or on a computer, often called a server, through the Internet.
+> ### an aside on DNS[^big block quotes]:
+> 
+> Accessing a website is tantamount to accessing files hosted by or on a computer, often called a server, through the Internet.
 The way our computer, often called the client, can talk to the server is through the use of an IP (Internet Protocol) address, the Internet version of a mailing address.
 However, it would be a pain if you had to remember every website’s IP address you want to use on a daily basis. 
-
-The solution comes in the form of ***[DNS (Domain Name System)](https://en.wikipedia.org/wiki/Domain_Name_System){:target=”_blank”}***.
+> 
+> The solution comes in the form of ***[DNS (Domain Name System)](https://en.wikipedia.org/wiki/Domain_Name_System){:target=”_blank”}***.
 DNS allows you to use a human-friendly domain name, or URL, instead of the computer's IP address.
 DNS servers store DNS records which include the associated IP addresses for domains.
-
-> 
-“DNS records are sets of instructions that live on DNS servers. 
-These instructions are vital to the success of a DNS lookup.” 
-- Cloudflare
-
+DNS records are sets of instructions vital to the success of a DNS lookup.
 Web browsers communicate with DNS servers, through what is called a DNS lookup, whenever you look up a URL to find the website’s associated IP address.
-
-<hr style = “height:100px;color:cornflowerblue;”>
-<hr style = “height:100px;color:cornflowerblue;”>
 
 Previously, when I had my website’s related files on my ***[Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi){:target=”_blank”}***, I used DDNS through the company ***[No-IP](https://en.wikipedia.org/wiki/No-IP){:target=”_blank”}***​​. 
 No-IP provides domains, free of charge, and a DDNS application for the machine hosting the website’s server.
 I configured No-IP’s DDNS application to run every five to ten minutes on the Raspberry Pi  to communicate changes in my public IP address to No-IP’s DNS servers.
 If it did change, they would make sure to publish new DNS records saying what IP address my website should point towards.
 
-<hr style = “height:100px;color:cornflowerblue;”>
-<hr style = “height:100px;color:cornflowerblue;”>
-
-### an aside on DDNS:
-Every computer in a home network talks to the internet using the home router. 
+> ### an aside on DDNS:
+> 
+> Every computer in a home network talks to the internet using the home router. 
 The home router has an external, or public-facing, IP address used to access the Internet. 
 This IP address can be changed by an ISP without warning. 
 In order to utilize DNS, it’s important to know what your IP address is at all times and rely on the fact that it will not change over time. 
 This is where DDNS comes into play.
 DDNS allows for a changing public IP address (that’s why it’s called dynamic DNS).
-
-<hr style = “height:100px;color:cornflowerblue;”>
-<hr style = “height:100px;color:cornflowerblue;”>
 
 I noticed that the WiFi would intermittently go down on a daily basis – of course there couldn’t possibly be a reason for this…
 
@@ -59,8 +44,7 @@ Otherwise, it could have been a malicious actor or a bot was actually scanning m
 
 ## choosing the right tech stack
 
-> 
-A tech stack is a list of all the technology services used to run a single application or website.
+> A tech stack is a list of all the technology services used to run a single application or website.
 
 What I was using before I had to shutdown the website:
 
@@ -69,8 +53,7 @@ What I was using before I had to shutdown the website:
 3. [Web Server](https://en.wikipedia.org/wiki/Web_server){:target=”_blank”}: ***[nginx](https://nginx.org/en/){:target=”_blank”}***
 4. Content Type: some good ol’ HTML and CSS[^basic website]
 
-> 
-A web server distributes web content that has been requested.
+> A web server distributes web content requested by a client..
 
 ### to ***[cloud](https://en.wikipedia.org/wiki/Cloud_computing){:target=”_blank”}*** or to self-host, that is the question
 
@@ -88,16 +71,14 @@ Setting up the Raspberry Pi, to put it succinctly, involved putting some of the 
 ***[hardening](https://en.wikipedia.org/wiki/Hardening_(computing)){:target=”_blank”}*** the OS, operating system. 
 I must admit, creating ***[VMs](https://en.wikipedia.org/wiki/Virtual_machine){:target=”_blank”}***, (virtual machines) in the cloud is much easier.
 
-> 
-A VM is a software-defined computer existing only in code. 
+> A VM is a software-defined computer existing only in code. 
 Most likely the machine, or computer, that you and I are using everyday is physically, or hardware-, defined.
 A VM, much like a hardware-defined machine, has a CPU, RAM, storage, and can even connect to the internet.
 
 In the GCP console, I created a project to hold all of my resources related to running this website, attached a billing account (gave my credit card info yippee), specified my hardware/network requirements for the VM, and then created it with a simple tap of a button. 
 
 
-> 
-The VM, itself, is an "e2 standard" instance which means it uses ***[Intel Core Broadwell processors](https://en.wikipedia.org/wiki/Broadwell_(microarchitecture)){:target=”_blank”}***. 
+> The VM, itself, is an "e2 standard" instance which means it uses ***[Intel Core Broadwell processors](https://en.wikipedia.org/wiki/Broadwell_(microarchitecture)){:target=”_blank”}***. 
 The VM’s hardware specs include two ***[vCPUs](https://www.techtarget.com/whatis/definition/virtual-CPU-vCPU){:target=”_blank”}*** ( virtual CPUs), 16 GB of RAM, and 128[^storage overkill] GB of storage.
 
 ### the OS
@@ -114,20 +95,17 @@ I wanted to get the website up and running again, so I just went with what I was
 
 I chose nginx as my web server because it is known to outperform other popular web server implementations in benchmark tests, especially when it comes to serving static content.
 
-> 
-Static content (or web pages) is delivered to a web browser exactly as stored. 
+> Static content (or web pages) is delivered to a web browser exactly as stored. 
 The web browser then converts the content to the web page for you to view. 
 In contrast, dynamic content is generated by a web application which is then processed by the web browser.
 
 nginx is an incredibly useful tool that removes the need to create an [HTTP (Hypertext Transfer Protocol)](https://en.wikipedia.org/wiki/HTTP){:target=”_blank”} web server from scratch[^future project]. 
 
-> 
-HTTP is the protocol, specification/method, by which information is communicated over the World Wide Web.
+> HTTP is the protocol, specification/method, by which information is communicated over the World Wide Web.
 
 Thankfully, there was no need to make [HTML (Hypertext Markup Language)](https://en.wikipedia.org/wiki/HTML){:target=”_blank”} and [CSS (Cascading Style Sheets)](https://en.wikipedia.org/wiki/CSS){:target=”_blank”} files from scratch.
 
-> 
-HTML is a markup language used to create the basic structure and text for each web page in a website. 
+> HTML is a markup language used to create the basic structure and text for each web page in a website. 
 CSS is a style sheet language used for the styling and making the webpage/website visually appealing. 
 [JavaScript](https://en.wikipedia.org/wiki/JavaScript){:target=”_blank”} is a programming language used for any logic that needs to be handled.
 
@@ -139,8 +117,7 @@ With my new set-up, I didn’t have to worry about DDNS because there was no Int
 In the GCP console, I configured my external IP address to be static. 
 Then, I obtained a lease to the domain `aadith-thiruvallarai.com` from ***[Squarespace](https://www.squarespace.com/){:target=”_blank”}***.
 
-> 
-You can’t actually own a URL. 
+> You can’t actually own a URL. 
 You can only lease it from companies like GoDaddy and Squarespace.
 
 Configuring DNS involves creating and publishing what is known as DNS records.
@@ -166,6 +143,10 @@ So, here’s the new and improved stack:
 
 ## updates
 
+### April 17th, 2025
+- Changed some verbiage for clarity
+- Made horizontally ruled “asides” back into long block quotes w/ some revisions
+
 ### April 16th, 2025
 - Changed some verbiage for clarity
 - Made long block quotes into “asides”
@@ -175,25 +156,19 @@ So, here’s the new and improved stack:
 - Accidentally published the blog post early because I wanted to test the DNS settings with a new blog post
 - Completed the blog post
 
-[^weekly users]: 
-Yeah, I'm proud to admit that I have at least one weekly visitor! 
+[^weekly users]: Yeah, I'm proud to admit that I have at least one weekly visitor! 
 On a more serious note, I didn't figure out how to track how many people were visiting the site. My numbers are solely based on the friends I shared the website with... yeah that's right I have one friend, at least!
 
-[^big block quotes]: 
-I felt like some of my block quotes were getting too big. I hope you like this style of inserting “asides” when some critical, yet verbose, information needs to be communicated.
+[^big block quotes]: I felt like some of my block quotes were getting too big. I hope you like this style of inserting “asides” when some critical, yet verbose, information needs to be communicated.
 
-[^basic website]: 
-I’m sorry for not using the new React framework of the day `:(` … 
+[^basic website]: I’m sorry for not using the new React framework of the day `:(` … 
 I’m not actually sorry `:p`. 
 I just wanted to keep it simple, stupid, and short!
 If you’re reading this a second time… I still stand by what I said `:p`
 
-[^cloud meme]: 
-I’m envisioning the ***[“Old Man Yells at Cloud”](https://knowyourmeme.com/memes/old-man-yells-at-cloud){:target=”_blank”}*** meme.
+[^cloud meme]: I’m envisioning the ***[“Old Man Yells at Cloud”](https://knowyourmeme.com/memes/old-man-yells-at-cloud){:target=”_blank”}*** meme.
 
-[^storage overkill]: 
-For what I need this VM to do, this amount of storage is definitely overkill.
+[^storage overkill]: For what I need this VM to do, this amount of storage is definitely overkill.
 
-[^future project]: 
-Maybe I should make an HTTP web server in C, C++, or Rust? 
+[^future project]: Maybe I should make an HTTP web server in C, C++, or Rust? 
 I don’t know, shoot me an email if you’d like to see me do this and blog about it!
