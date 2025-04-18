@@ -126,24 +126,26 @@ CSS is a <em>style sheet language</em> used for the styling and making the webpa
 <a href="https://en.wikipedia.org/wiki/JavaScript" target="”_blank”">JavaScript</a> is a <em>programming language</em> used for any logic that needs to be handled.</p>
 </blockquote>
 <h3>to <strong><em><a href="https://en.wikipedia.org/wiki/Cloud_computing" target="”_blank”">cloud</a></em></strong> or to self-host, that is the question</h3>
-<p>After much deliberation and moral indignation at the choices that led me here, I unwillingly chose to switch to using the cloud<sup id="fnref:cloud meme"><a class="footnote-ref" href="#fn:cloud meme">5</a></sup>. 
+<p>After much <em>deliberation</em> and <em>moral indignation</em> at the choices that led me here, I unwillingly chose to switch to using the cloud<sup id="fnref:cloud meme"><a class="footnote-ref" href="#fn:cloud meme">5</a></sup>. 
 Instead of being cool and hosting a website on a Raspberry Pi – really cool to me if you were asking – I'm now hosting the website on <strong><em><a href="https://en.wikipedia.org/wiki/Google_Cloud_Platform" target="”_blank”">GCP</a></em></strong> (the Google Cloud Platform). 
-I was really proud of myself for getting hardware I could touch and feel to host a website readily accessible from the Internet. 
+I was really proud of myself for getting hardware I could <em>touch</em> and <em>feel</em> to host a website readily accessible from the Internet. 
 But, in order to prevent the ISP attack messages and WiFi issues, I had no choice but to host the website remotely. 
 It’s not like I have another network laying around so the next best thing is to use the cloud. </p>
-<p>Additionally, the pricing differences between "on-premise" hosting and cloud hosting is significant. 
+<p>Unforuately, the pricing differences between "on-premise" hosting and cloud hosting is significant. 
 On-premise hosting has a high<sup id="fnref:nuance on price"><a class="footnote-ref" href="#fn:nuance on price">6</a></sup> <strong><em><a href="https://en.wikipedia.org/wiki/Capital_expenditure" target="_blank">CapEx (capital expense)</a></em></strong> and cloud hosting has a high <strong><em><a href="https://en.wikipedia.org/wiki/Operating_expense" target="_blank">OpEx (operating expense)</a></em></strong>. </p>
 <blockquote>
 <p>CapEx is the money spent to buy, maintain, or improve fixed assets -- in my case the Raspberry Pi, it's related hardware components, and my personal laptop. 
 OpEx is the ongoing cost for running a product/business/system -- the energy bill for running my Raspberry Pi.</p>
 </blockquote>
-<p>The Raspberry Pi costed approximately <em>100 USD</em> (the CapEx) and it's energy cost per month is a <em>few cents</em> (the OpEx). 
-While, the cloud infrastructure and VM running all the time costs approximately <em>60 USD per month</em> (the OpEx).
-Although cloud hosting doesn't incur a CapEx, the OpEx, oftentimes the "subscription fee", compensates for the cloud provider's CapEx cost they incurred. 
-This is a necessary, but temporary, <em>evil</em> for the current moment until I can figure out a better cost-saving solution.</p>
+<p>The Raspberry Pi costed approximately 100 USD (the CapEx) and it's energy cost per month is a <em>few cents</em> (the OpEx). 
+This means that over one year, the montly cost of self-hosting the website is a little more than 8.33 USD.
+I intend to have this website for as long as I can, so clearly the monthly and yearly cost would have been nil.
+The cloud infrastructure and VM running all the time costs approximately <strong>60 USD per month</strong><em> (the OpEx).
+Over one year, running a website will cost around $720 USD (<code>:(</code>).
+Although cloud hosting doesn't incur a CapEx (because there is no capital that I have to own/maintain), the OpEx, the montly fee to run the VM, compensates for the cloud provider's CapEx cost they incurred. 
+This is a necessary, but temporary, </em>evil* for the current moment until I can figure out a better cost-saving solution.</p>
 <h3>the software’s hardware</h3>
-<p>I left a lot of the hardware set up details out in my previous blog post simply because I felt like it would be a blog post of its own. 
-Here, I will do better to elaborate on what my hardware specs are! 
+<p>I left the hardware set-up details out in my previous blog post out of sheer laziness but, I will do better to elaborate on what my previous and current hardware specs! 
 Setting up the Raspberry Pi, to put it succinctly, involved putting some of the hardware together, downloading the appropriate 
 <strong><em><a href="https://en.wikipedia.org/wiki/System_image" target="_blank">image</a></em></strong>, and then 
 <strong><em><a href="https://en.wikipedia.org/wiki/Hardening_(computing)" target="”_blank”">hardening</a></em></strong> the OS, operating system. 
@@ -159,12 +161,12 @@ A VM, much like a hardware-defined machine, has a CPU, RAM, storage, and can eve
 The VM’s hardware specs include two <strong><em><a href="https://www.techtarget.com/whatis/definition/virtual-CPU-vCPU" target="”_blank”">vCPUs</a></em></strong> ( virtual CPUs), 16 GB of RAM, and 128<sup id="fnref:storage overkill"><a class="footnote-ref" href="#fn:storage overkill">7</a></sup> GB of storage.</p>
 </blockquote>
 <h3>the OS</h3>
-<p>The old tech stack used RPO, Raspberry Pi OS. 
-RPO, if you couldn’t tell from the name, was made for the Raspberry Pi because it needed something more suitable for a single-board computer. 
-Besides that, I wanted to familiarize myself with a Linux flavor I hadn’t used before.</p>
+<p>The old tech stack used RPO (Raspberry Pi OS). 
+RPO, if you couldn’t tell from the name, was made for the Raspberry Pi because the creaters of the Raspberry Pi needed a suitable OS for a single-board computer. 
+Besides that, I wanted to familiarize myself with a Linux flavor I am unfamiliar with.</p>
 <p>On the flip side, working in the cloud gives me flexibility on what OS I can choose to use. 
-I’m pretty familiar with using <strong><em><a href="https://en.wikipedia.org/wiki/Ubuntu" target="”_blank”">Ubuntu</a></em></strong>, a Linux distribution, from messing around with VMs on my personal machine and class assignments during my undergrad.
-I wanted to get the website up and running again, so I just went with what I was most familiar with!</p>
+I have prior experience with using <strong><em><a href="https://en.wikipedia.org/wiki/Ubuntu" target="”_blank”">Ubuntu</a></em></strong>, a Linux distribution[^so many], from messing around with VMs on my personal machine and class assignments during my undergrad.
+I wanted to quickly get the website up and running again, so I just went with what I was most familiar with!</p>
 <h3>the web restaurant</h3>
 <p>I chose nginx as my web server because it is known to outperform other popular web server implementations in benchmark tests, especially when it comes to serving static content.</p>
 <blockquote>
@@ -172,7 +174,7 @@ I wanted to get the website up and running again, so I just went with what I was
 The web browser then converts the content to the web page for you to view. 
 In contrast, dynamic content is generated by a web application which is then processed by the web browser.</p>
 </blockquote>
-<p>nginx is an incredibly useful tool that removes the need to create an <a href="https://en.wikipedia.org/wiki/HTTP" target="”_blank”">HTTP (Hypertext Transfer Protocol)</a> web server from scratch<sup id="fnref:future project"><a class="footnote-ref" href="#fn:future project">8</a></sup>. </p>
+<p>nginx is an incredibly useful web srver application that removes the need to create an <a href="https://en.wikipedia.org/wiki/HTTP" target="”_blank”">HTTP (Hypertext Transfer Protocol)</a> web server from scratch<sup id="fnref:future project"><a class="footnote-ref" href="#fn:future project">8</a></sup>. </p>
 <blockquote>
 <p>HTTP is the protocol, specification/method, by which information is communicated over the World Wide Web.</p>
 </blockquote>
@@ -184,10 +186,11 @@ In the GCP console, I configured my external IP address to be static.
 Then, I obtained a lease to the domain <code>aadith-thiruvallarai.com</code> from <strong><em><a href="https://www.squarespace.com/" target="”_blank”">Squarespace</a></em></strong>.</p>
 <blockquote>
 <p>You can’t actually own a URL. 
-You can only lease it from companies like GoDaddy and Squarespace.</p>
+You can only lease it from companies like GoDaddy and Squarespace who own the lease to a bunch of domains.</p>
 </blockquote>
-<p>Configuring DNS involves creating and publishing what is known as DNS records.</p>
-<p>DNS records come in many flavors but the only one I had to be concerned with was an A record.
+<p>It costs around 20 USD a year to lease a domain.</p>
+<p>Configuring DNS involves creating and publishing what is known as DNS records.
+DNS records come in many flavors but the only one I had to be concerned with was an A record.
 An A record points the URL to the website’s server’s IP address.</p>
 <figure>
   <img src="/images/blog/2025/april/the-blog-went-down-oh-no/custom-records.png" alt="Squarespace Custom Records" width="600">
@@ -207,7 +210,7 @@ An A record points the URL to the website’s server’s IP address.</p>
 <h3>April 18th, 2025</h3>
 <ul>
 <li>Changed some verbiage for clarity</li>
-<li>Made horizontally ruled “asides” back into long block quotes w/ some revisions</li>
+<li>Changed horizontally ruled “asides” back into long block quotes w/ some revisions</li>
 </ul>
 <h3>April 16th, 2025</h3>
 <ul>
@@ -224,10 +227,12 @@ An A record points the URL to the website’s server’s IP address.</p>
 <ol>
 <li id="fn:weekly users">
 <p>Yeah, I'm proud to admit that I have at least one weekly visitor! 
-On a more serious note, I didn't figure out how to track how many people were visiting the site. My numbers are solely based on the friends I shared the website with... yeah that's right I have one friend, at least!&#160;<a class="footnote-backref" href="#fnref:weekly users" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+On a more serious note, I didn't figure out how to track how many people were visiting the site. 
+My numbers are solely based on the friends I shared the website with... yeah that's right I have one friend, at least!&#160;<a class="footnote-backref" href="#fnref:weekly users" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:big block quotes">
-<p>I felt like some of my block quotes were getting too big. I hope you like this style of inserting “asides” when some critical, yet verbose, information needs to be communicated.&#160;<a class="footnote-backref" href="#fnref:big block quotes" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>I felt like some of my block quotes were getting too big. 
+I hope you like this style of inserting “asides” when some critical, yet verbose, information needs to be communicated.&#160;<a class="footnote-backref" href="#fnref:big block quotes" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:basic website">
 <p>I’m sorry for not using the new React framework of the day <code>:(</code> … 
@@ -242,7 +247,8 @@ If you’re reading this a second time… I still stand by what I said <code>:p<
 <p>I’m envisioning the <strong><em><a href="https://knowyourmeme.com/memes/old-man-yells-at-cloud" target="”_blank”">“Old Man Yells at Cloud”</a></em></strong> meme.&#160;<a class="footnote-backref" href="#fnref:cloud meme" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn:nuance on price">
-<p>... depends on the scale you're operating at.&#160;<a class="footnote-backref" href="#fnref:nuance on price" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+<p>... ultimately depends on the scale you're operating at. 
+In my case, I wanted to have a cheap CapEx and OpEx as a one-person operation.&#160;<a class="footnote-backref" href="#fnref:nuance on price" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 <li id="fn:storage overkill">
 <p>For what I need this VM to do, this amount of storage is definitely overkill.&#160;<a class="footnote-backref" href="#fnref:storage overkill" title="Jump back to footnote 7 in the text">&#8617;</a></p>

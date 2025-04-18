@@ -54,6 +54,7 @@ What I was using before I had to shutdown the website:
 4. Content Type: some good ol’ HTML and CSS[^basic website]
 
 > ### an aside on web content:
+> 
 > A web server distributes web content requested by a client. 
 Web content can include HTML, CSS, and JavaScript[^web files]. 
 HTML is a *markup language* used to create the basic structure and text for each web page in a website. 
@@ -62,27 +63,29 @@ CSS is a *style sheet language* used for the styling and making the webpage/webs
 
 ### to ***[cloud](https://en.wikipedia.org/wiki/Cloud_computing){:target=”_blank”}*** or to self-host, that is the question
 
-After much deliberation and moral indignation at the choices that led me here, I unwillingly chose to switch to using the cloud[^cloud meme]. 
+After much *deliberation* and *moral indignation* at the choices that led me here, I unwillingly chose to switch to using the cloud[^cloud meme]. 
 Instead of being cool and hosting a website on a Raspberry Pi – really cool to me if you were asking – I'm now hosting the website on ***[GCP](https://en.wikipedia.org/wiki/Google_Cloud_Platform){:target=”_blank”}*** (the Google Cloud Platform). 
-I was really proud of myself for getting hardware I could touch and feel to host a website readily accessible from the Internet. 
+I was really proud of myself for getting hardware I could *touch* and *feel* to host a website readily accessible from the Internet. 
 But, in order to prevent the ISP attack messages and WiFi issues, I had no choice but to host the website remotely. 
 It’s not like I have another network laying around so the next best thing is to use the cloud. 
 
-Additionally, the pricing differences between "on-premise" hosting and cloud hosting is significant. 
+Unforuately, the pricing differences between "on-premise" hosting and cloud hosting is significant. 
 On-premise hosting has a high[^nuance on price] ***[CapEx (capital expense)](https://en.wikipedia.org/wiki/Capital_expenditure){:target="_blank"}*** and cloud hosting has a high ***[OpEx (operating expense)](https://en.wikipedia.org/wiki/Operating_expense){:target="_blank"}***. 
 
 > CapEx is the money spent to buy, maintain, or improve fixed assets -- in my case the Raspberry Pi, it's related hardware components, and my personal laptop. 
 OpEx is the ongoing cost for running a product/business/system -- the energy bill for running my Raspberry Pi.
 
-The Raspberry Pi costed approximately *100 USD* (the CapEx) and it's energy cost per month is a *few cents* (the OpEx). 
-While, the cloud infrastructure and VM running all the time costs approximately *60 USD per month* (the OpEx).
-Although cloud hosting doesn't incur a CapEx, the OpEx, oftentimes the "subscription fee", compensates for the cloud provider's CapEx cost they incurred. 
+The Raspberry Pi costed approximately 100 USD (the CapEx) and it's energy cost per month is a *few cents* (the OpEx). 
+This means that over one year, the montly cost of self-hosting the website is a little more than 8.33 USD.
+I intend to have this website for as long as I can, so clearly the monthly and yearly cost would have been nil.
+The cloud infrastructure and VM running all the time costs approximately **60 USD per month*** (the OpEx).
+Over one year, running a website will cost around $720 USD (`:(`).
+Although cloud hosting doesn't incur a CapEx (because there is no capital that I have to own/maintain), the OpEx, the montly fee to run the VM, compensates for the cloud provider's CapEx cost they incurred. 
 This is a necessary, but temporary, *evil* for the current moment until I can figure out a better cost-saving solution.
 
 ### the software’s hardware
 
-I left a lot of the hardware set up details out in my previous blog post simply because I felt like it would be a blog post of its own. 
-Here, I will do better to elaborate on what my hardware specs are! 
+I left the hardware set-up details out in my previous blog post out of sheer laziness but, I will do better to elaborate on what my previous and current hardware specs! 
 Setting up the Raspberry Pi, to put it succinctly, involved putting some of the hardware together, downloading the appropriate 
 ***[image](https://en.wikipedia.org/wiki/System_image){:target="_blank"}***, and then 
 ***[hardening](https://en.wikipedia.org/wiki/Hardening_(computing)){:target=”_blank”}*** the OS, operating system. 
@@ -99,13 +102,13 @@ The VM’s hardware specs include two ***[vCPUs](https://www.techtarget.com/what
 
 ### the OS
 
-The old tech stack used RPO, Raspberry Pi OS. 
-RPO, if you couldn’t tell from the name, was made for the Raspberry Pi because it needed something more suitable for a single-board computer. 
-Besides that, I wanted to familiarize myself with a Linux flavor I hadn’t used before.
+The old tech stack used RPO (Raspberry Pi OS). 
+RPO, if you couldn’t tell from the name, was made for the Raspberry Pi because the creaters of the Raspberry Pi needed a suitable OS for a single-board computer. 
+Besides that, I wanted to familiarize myself with a Linux flavor I am unfamiliar with.
 
 On the flip side, working in the cloud gives me flexibility on what OS I can choose to use. 
-I’m pretty familiar with using ***[Ubuntu](https://en.wikipedia.org/wiki/Ubuntu){:target=”_blank”}***, a Linux distribution, from messing around with VMs on my personal machine and class assignments during my undergrad.
-I wanted to get the website up and running again, so I just went with what I was most familiar with!
+I have prior experience with using ***[Ubuntu](https://en.wikipedia.org/wiki/Ubuntu){:target=”_blank”}***, a Linux distribution[^so many], from messing around with VMs on my personal machine and class assignments during my undergrad.
+I wanted to quickly get the website up and running again, so I just went with what I was most familiar with!
 
 ### the web restaurant
 
@@ -115,7 +118,7 @@ I chose nginx as my web server because it is known to outperform other popular w
 The web browser then converts the content to the web page for you to view. 
 In contrast, dynamic content is generated by a web application which is then processed by the web browser.
 
-nginx is an incredibly useful tool that removes the need to create an [HTTP (Hypertext Transfer Protocol)](https://en.wikipedia.org/wiki/HTTP){:target=”_blank”} web server from scratch[^future project]. 
+nginx is an incredibly useful web srver application that removes the need to create an [HTTP (Hypertext Transfer Protocol)](https://en.wikipedia.org/wiki/HTTP){:target=”_blank”} web server from scratch[^future project]. 
 
 > HTTP is the protocol, specification/method, by which information is communicated over the World Wide Web.
 
@@ -129,10 +132,11 @@ In the GCP console, I configured my external IP address to be static.
 Then, I obtained a lease to the domain `aadith-thiruvallarai.com` from ***[Squarespace](https://www.squarespace.com/){:target=”_blank”}***.
 
 > You can’t actually own a URL. 
-You can only lease it from companies like GoDaddy and Squarespace.
+You can only lease it from companies like GoDaddy and Squarespace who own the lease to a bunch of domains.
+
+It costs around 20 USD a year to lease a domain.
 
 Configuring DNS involves creating and publishing what is known as DNS records.
-
 DNS records come in many flavors but the only one I had to be concerned with was an A record.
 An A record points the URL to the website’s server’s IP address.
 
@@ -156,21 +160,22 @@ So, here’s the new and improved stack:
 
 ### April 18th, 2025
 - Changed some verbiage for clarity
-- Made horizontally ruled “asides” back into long block quotes w/ some revisions
+- Changed horizontally ruled “asides” back into long block quotes w/ some revisions
 
 ### April 16th, 2025
 - Changed some verbiage for clarity
 - Made long block quotes into “asides”
 
 ### April 15th, 2025
-
 - Accidentally published the blog post early because I wanted to test the DNS settings with a new blog post
 - Completed the blog post
 
 [^weekly users]: Yeah, I'm proud to admit that I have at least one weekly visitor! 
-On a more serious note, I didn't figure out how to track how many people were visiting the site. My numbers are solely based on the friends I shared the website with... yeah that's right I have one friend, at least!
+On a more serious note, I didn't figure out how to track how many people were visiting the site. 
+My numbers are solely based on the friends I shared the website with... yeah that's right I have one friend, at least!
 
-[^big block quotes]: I felt like some of my block quotes were getting too big. I hope you like this style of inserting “asides” when some critical, yet verbose, information needs to be communicated.
+[^big block quotes]: I felt like some of my block quotes were getting too big. 
+I hope you like this style of inserting “asides” when some critical, yet verbose, information needs to be communicated.
 
 [^basic website]: I’m sorry for not using the new React framework of the day `:(` … 
 I’m not actually sorry `:p`. 
@@ -181,7 +186,8 @@ If you’re reading this a second time… I still stand by what I said `:p`
 
 [^cloud meme]: I’m envisioning the ***[“Old Man Yells at Cloud”](https://knowyourmeme.com/memes/old-man-yells-at-cloud){:target=”_blank”}*** meme.
 
-[^nuance on price]: ... depends on the scale you're operating at.
+[^nuance on price]: ... ultimately depends on the scale you're operating at. 
+In my case, I wanted to have a cheap CapEx and OpEx as a one-person operation.
 
 [^storage overkill]: For what I need this VM to do, this amount of storage is definitely overkill.
 
