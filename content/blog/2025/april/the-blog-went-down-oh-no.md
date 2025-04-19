@@ -69,16 +69,16 @@ I was really proud of myself for getting hardware I could *touch* and *feel* to 
 But, in order to prevent the ISP attack messages and WiFi issues, I had no choice but to host the website remotely. 
 It’s not like I have another network laying around so the next best thing is to use the cloud. 
 
-Unforuately, the pricing differences between "on-premise" hosting and cloud hosting is significant. 
+Unfortunately, the pricing differences between "on-premise" hosting and cloud hosting is significant. 
 On-premise hosting has a high[^nuance on price] ***[CapEx (capital expense)](https://en.wikipedia.org/wiki/Capital_expenditure){:target="_blank"}*** and cloud hosting has a high ***[OpEx (operating expense)](https://en.wikipedia.org/wiki/Operating_expense){:target="_blank"}***. 
 
 > CapEx is the money spent to buy, maintain, or improve fixed assets -- in my case the Raspberry Pi, it's related hardware components, and my personal laptop. 
 OpEx is the ongoing cost for running a product/business/system -- the energy bill for running my Raspberry Pi.
 
-The Raspberry Pi costed approximately 100 USD (the CapEx) and it's energy cost per month is a *few cents* (the OpEx). 
+The Raspberry Pi costed approximately 100 USD (the CapEx) and it's energy cost per month is a few cents (the OpEx). 
 This means that over one year, the montly cost of self-hosting the website is a little more than 8.33 USD.
 I intend to have this website for as long as I can, so clearly the monthly and yearly cost would have been nil.
-The cloud infrastructure and VM running all the time costs approximately **60 USD per month*** (the OpEx).
+The cloud infrastructure and VM running all the time costs approximately 60 USD per month [^additional cost](the OpEx).
 Over one year, running a website will cost around $720 USD (`:(`).
 Although cloud hosting doesn't incur a CapEx (because there is no capital that I have to own/maintain), the OpEx, the montly fee to run the VM, compensates for the cloud provider's CapEx cost they incurred. 
 This is a necessary, but temporary, *evil* for the current moment until I can figure out a better cost-saving solution.
@@ -132,8 +132,7 @@ In the GCP console, I configured my external IP address to be static.
 Then, I obtained a lease to the domain `aadith-thiruvallarai.com` from ***[Squarespace](https://www.squarespace.com/){:target=”_blank”}***.
 
 > You can’t actually own a URL. 
-You can only lease it from companies like GoDaddy and Squarespace who own the lease to a bunch of domains.
-
+You can only lease it from companies like GoDaddy and Squarespace who own the lease to a bunch of domains. 
 It costs around 20 USD a year to lease a domain.
 
 Configuring DNS involves creating and publishing what is known as DNS records.
@@ -188,6 +187,8 @@ If you’re reading this a second time… I still stand by what I said `:p`
 
 [^nuance on price]: ... ultimately depends on the scale you're operating at. 
 In my case, I wanted to have a cheap CapEx and OpEx as a one-person operation.
+
+[^additional cost]: ... plus some DNS costs I'll get into later.
 
 [^storage overkill]: For what I need this VM to do, this amount of storage is definitely overkill.
 
