@@ -51,7 +51,7 @@ What I was using before I had to shutdown the website:
 1. “On-premise” hardware: Raspberry Pi
 2. Operating System: ***[Raspberry Pi OS](https://en.wikipedia.org/wiki/Raspberry_Pi_OS){:target=”_blank”}***, based on ***[Debian](https://en.wikipedia.org/wiki/Debian){:target=”_blank”}*** (a ***[Linux](https://en.wikipedia.org/wiki/Linux){:target=”_blank”}*** distribution)
 3. ***[Web Server](https://en.wikipedia.org/wiki/Web_server){:target=”_blank”}***: ***[nginx](https://nginx.org/en/){:target=”_blank”}***
-4. Content Type: some good ol’ HTML and CSS[^basic website]
+4. Content Type: some good ol’ ***[HTML (Hypertext Markup Language)](https://en.wikipedia.org/wiki/HTML){:target=”_blank”}*** and ***[CSS (Cascading Style Sheets)](https://en.wikipedia.org/wiki/CSS){:target=”_blank”}[^basic website]***
 
 > ### an aside on web content:
 > 
@@ -64,7 +64,7 @@ CSS is a *style sheet language* used for the styling and making the webpage/webs
 ### to ***[cloud](https://en.wikipedia.org/wiki/Cloud_computing){:target=”_blank”}*** or to self-host, that is the question
 
 After much *deliberation* and *moral indignation* at the choices that led me here, I unwillingly chose to switch to using the cloud[^cloud meme]. 
-Instead of being cool and hosting a website on a Raspberry Pi – really cool to me if you were asking – I'm now hosting the website on ***[GCP](https://en.wikipedia.org/wiki/Google_Cloud_Platform){:target=”_blank”}*** (the Google Cloud Platform). 
+Instead of being cool and hosting a website on a Raspberry Pi – really cool to me if you were asking – I'm now hosting the website on ***[GCP (Google Cloud Platform)](https://en.wikipedia.org/wiki/Google_Cloud_Platform){:target=”_blank”}***. 
 I was really proud of myself for getting hardware I could *touch* and *feel* to host a website readily accessible from the Internet. 
 But, in order to prevent the ISP attack messages and WiFi issues, I had no choice but to host the website remotely. 
 It’s not like I have another network laying around so the next best thing is to use the cloud. 
@@ -122,7 +122,7 @@ nginx is an incredibly useful web srver application that removes the need to cre
 
 > HTTP is the protocol, specification/method, by which information is communicated over the World Wide Web.
 
-Thankfully, there was no need to make [HTML (Hypertext Markup Language)](https://en.wikipedia.org/wiki/HTML){:target=”_blank”} and [CSS (Cascading Style Sheets)](https://en.wikipedia.org/wiki/CSS){:target=”_blank”} files from scratch.
+Thankfully, there was no need to make HTML and CSS files from scratch.
 I used ***[Pelican](https://getpelican.com/#quickstart){:target=”_blank”}***, a static site generator, to convert [Markdown](https://en.wikipedia.org/wiki/Markdown){:target=”_blank”}, essentially plaintext, files to HTML and CSS files.
 
 ### the arcane magic of DNS, or how did i set up my URL
